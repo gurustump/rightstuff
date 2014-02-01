@@ -48,7 +48,8 @@ Template Name: Home Page
 							$featured_posts = get_posts($featured_args);
 							if (isset($featured_posts[0])) {
 								foreach($featured_posts as $key => $post) { 
-									$randomNum = (count(get_post_meta($post->ID,'right_stuff_test_image') > 1)) ? rand(0, count(get_post_meta($post->ID,'right_stuff_test_image'))-1) : 0;
+									$imageCount = count(get_post_meta($post->ID,'right_stuff_test_image'));
+									$randomNum = $imageCount > 1 ? rand(0, $imageCount-1) : 0;
 									$imageArray = get_post_meta($post->ID,'right_stuff_test_image');
 									$image = $imageCount > 0 ? wp_get_attachment_image($imageArray[$randomNum], array(525,380)) : get_the_post_thumbnail($post->ID, array(525,380));
 								?>
