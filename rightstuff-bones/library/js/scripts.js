@@ -29,7 +29,6 @@ if (!window.getComputedStyle) {
 
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {
-
 	/*
 	Responsive jQuery is a tricky thing.
 	There's a bunch of different ways to handle
@@ -66,8 +65,37 @@ jQuery(document).ready(function($) {
 	}
 	
 	
-	// add all your scripts here
+	$('.nav-activator').click(function() {
+		$(this).siblings('.nav').slideToggle()
+	})
 	
+	$('.SHOW_MORE').click(function(e) {
+		e.preventDefault()
+		var activator = $(this)
+		var featuredOffset = $('.FEATURED_POSTS li').length;
+		$.ajax({
+			type:'GET',
+			url:activator.attr('href')+'&offset='+featuredOffset,
+			success:function(data) {
+				console.log(data)
+				if (data.count_total - featuredOffset < 6) {
+					activator.fadeOut();
+					console.log($(this))
+				}
+				$.each(data.posts, function(i,post) {
+					$('<li class="featured_'+(i+featuredOffset)+'">'+
+						'<a href="'+post.url+'">'+
+							'<img src="'+post.thumbnail_images.full.url+'" alt="'+post.title+'" />'+
+							'<span class="title-wrap">'+
+								'<span class="title">'+post.title+'</span>'+
+								'<span class="excerpt">'+post.excerpt+'</span>'+
+							'</span>'+
+						'</a>'+
+					'</li>').appendTo('.FEATURED_POSTS')
+				})
+			}
+		})
+	})
  
 }); /* end of as page load scripts */
 

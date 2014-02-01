@@ -55,6 +55,7 @@
 
 
 					<nav role="navigation">
+						<a class="nav-activator">Navigation</a>
 						<?php bones_main_nav(); ?>
 					</nav>
 

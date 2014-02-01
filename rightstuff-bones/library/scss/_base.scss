@@ -68,8 +68,6 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 96%;
-	margin: 0 auto;
 }
 
 /*********************
@@ -105,9 +103,10 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-	font-family: $sans-serif;
+	font-family:Oswald;
 	text-rendering: optimizelegibility;
-	font-weight: 500;
+	font-weight:normal;
+	
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -116,6 +115,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	/* removing text decoration from all headline links */
 	a {
 		text-decoration: none;
+		color:$heading-link-color;
 	}
 }
 
@@ -150,9 +150,67 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
-.header {}
-
-	#logo {}
+.header {
+	background:#111;
+	height:35px;
+	padding:10px 5px 0;
+	position:relative;
+	.wrap {
+		height:100%;
+		#logo {
+			background:url(../images/logo.png) no-repeat;
+			background-size:contain;
+			text-indent:-9999px;
+			height:100%;
+			margin:0;
+		}
+		nav {
+			.nav-activator {
+				position:absolute;
+				right:0;
+				top:0;
+				background:url(../images/nav-icon.png) no-repeat 13px 16px;
+				width:20px;
+				height:20px;
+				padding:12px 13px 13px 12px;
+				text-indent:-9999px;
+			}
+			.nav {
+				position:absolute;
+				top:45px;
+				right:0;
+				display:none;
+				width:100%;
+				background:#111;
+				/* opacity:0;
+				@include transition(opacity .35s); */
+				& > li {
+					position:relative;
+					& > a {
+						padding-left:20px;
+						@include css-gradient($from: #000, $to: #111, $vstart:"", $vend:"", $hstart:left, $hend:right);
+						&:before {
+							border-color:transparent $link-color;
+							border-style:solid;
+							border-width:5px 0 5px 10px;
+							content:"";
+							margin-right:5px;
+							position:absolute;
+							left:5px;
+							top:18px;
+						}
+					}
+				}
+			}
+			&:hover {
+				.nav {
+					/* visibility:visible;
+					opacity:1;*/
+				}
+			}
+		}
+	}
+}
 
 /*********************
 NAVIGATION STYLES
@@ -167,27 +225,15 @@ and more scalable.
 */
 
 .nav {
-	border: 1px solid #ccc;
 	border-bottom: 0;
-
-	li {
-
-		a {
-			display: block;
-			text-decoration: none;
-			padding: 10px 10px;
-			background-color: #eee;
-			border-bottom: 1px solid #ccc;
-
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-			&:hover, &:focus {
-
-			}
+	& > li {
+		& > a {
+			display:block;
+			text-decoration:none;
+			padding:10px 5px;
+			background-color:#111;
+			border-bottom:1px solid #222;
+			font-family:Oswald;
 		}
 
 		&:first-child {}

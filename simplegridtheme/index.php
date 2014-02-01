@@ -1,47 +1,5 @@
 <?php get_header(); ?>
-
-  <div id="mainTout_container">
-
-
-	<a href="http://mikehammari.com/rightstuff/?p=129"> 
-	<div class="mainTout_1 rounded">
-		 
-		<img src="http://mikehammari.com/rightstuff/files/2014/01/Kronies525.jpg">
-		<div class="mainTout_title_cont">
-
-			<h2>You won't believe what little boys are playing with now</h2>
-			<h4>Available everywhere dreams are crushed</h4>
-		</div>
-	</div>
-	</a>
-
-        <a href="http://mikehammari.com/rightstuff/2014/01/14/bumper-be-gone/">
-	<div class="mainTout_2  rounded">
-		
-		<img src="http://mikehammari.com/rightstuff/files/2014/01/ObamaSticker.jpg">
-		<div class="mainTout_title_cont">
-			
-			<h2>Obama Bumper Sticker Removal Kit</h2>
-			
-		</div>
-	</div>
-	</a>
-
-
-	<a href="">
-        <div class="mainTout_3 rounded">
-
-		<img  src="http://blogs.wpcarey.asu.edu/undergrad/wp-content/uploads/2013/03/buddy_system1.jpg">
-		<div class="mainTout_title_cont">
-
-			<h2>Example 1 headline test</h2>
-
-		</div>
-	</div>
-	</a>
-
-        
-  </div>
+
 
 
 

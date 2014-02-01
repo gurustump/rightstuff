@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
 /******************************************************************
 Site Name:
 Author:
@@ -117,6 +118,10 @@ a:hover {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
 }
 
 /**
@@ -398,6 +403,7 @@ p {
   -epub-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
+  margin-top: 0;
 }
 
 b, strong, .strong {
@@ -415,6 +421,7 @@ small, .small {
 ul, ol {
   padding: 0;
   list-style-type: none;
+  margin: 0;
 }
 
 dd {
@@ -449,23 +456,18 @@ CLEARFIXIN'
 .clearfix {
   zoom: 1;
 }
-.clearfix:before, .clearfix:after {
-  content: "";
-  display: table;
-}
 .clearfix:after {
+  content: "";
+  height: 0;
+  display: block;
+  font-size: 0;
+  visibility: 0;
   clear: both;
 }
 
 /*********************
 TOOLS
 *********************/
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 .image-replacement {
   text-indent: 100%;
   white-space: nowrap;
@@ -576,9 +578,9 @@ BUTTONS
 *********************/
 .button, .button:visited {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border: 1px solid #be0d37;
-  border-top-color: #db0f3f;
-  border-left-color: #db0f3f;
+  border: 1px solid #4a7e7e;
+  border-top-color: #569292;
+  border-left-color: #569292;
   padding: 4px 12px;
   color: white;
   display: inline-block;
@@ -590,61 +592,61 @@ BUTTONS
   margin-bottom: 20px;
   line-height: 21px;
   border-radius: 4px;
-  background-color: #e40f42;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f01d4f), to(#e40f42));
-  background-image: -webkit-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: -moz-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: -o-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: linear-gradient(to bottom, #f01d4f, #e40f42);
+  background-color: #599898;
+  background-image: -webkit-gradient(linear,  ,  , from(#66a5a5), to(#599898));
+  background-image: -webkit-linear-gradient( , #66a5a5, #599898);
+  background-image: -moz-linear-gradient( , #66a5a5, #599898);
+  background-image: -o-linear-gradient( , #66a5a5, #599898);
+  background-image: linear-gradient(to  , #66a5a5, #599898);
 }
 .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
   color: white;
-  border: 1px solid #be0d37;
-  border-top-color: #9d0a2d;
-  border-left-color: #9d0a2d;
-  background-color: #cc0e3b;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#cc0e3b));
-  background-image: -webkit-linear-gradient(top, #e40f42, #cc0e3b);
-  background-image: -moz-linear-gradient(top, #e40f42, #cc0e3b);
-  background-image: -o-linear-gradient(top, #e40f42, #cc0e3b);
-  background-image: linear-gradient(to bottom, #e40f42, #cc0e3b);
+  border: 1px solid #4a7e7e;
+  border-top-color: #3d6868;
+  border-left-color: #3d6868;
+  background-color: #508888;
+  background-image: -webkit-gradient(linear,  ,  , from(#599898), to(#508888));
+  background-image: -webkit-linear-gradient( , #599898, #508888);
+  background-image: -moz-linear-gradient( , #599898, #508888);
+  background-image: -o-linear-gradient( , #599898, #508888);
+  background-image: linear-gradient(to  , #599898, #508888);
 }
 .button:active, .button:visited:active {
-  background-color: #f01d4f;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#f01d4f));
-  background-image: -webkit-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: -moz-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: -o-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: linear-gradient(to bottom, #e40f42, #f01d4f);
+  background-color: #66a5a5;
+  background-image: -webkit-gradient(linear,  ,  , from(#599898), to(#66a5a5));
+  background-image: -webkit-linear-gradient( , #599898, #66a5a5);
+  background-image: -moz-linear-gradient( , #599898, #66a5a5);
+  background-image: -o-linear-gradient( , #599898, #66a5a5);
+  background-image: linear-gradient(to  , #599898, #66a5a5);
 }
 
 .blue-button, .blue-button:visited {
   border-color: #1472ad;
   text-shadow: 0 1px 1px #1472ad;
   background-color: #1681c4;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#1990db), to(#1681c4));
-  background-image: -webkit-linear-gradient(top, #1990db, #1681c4);
-  background-image: -moz-linear-gradient(top, #1990db, #1681c4);
-  background-image: -o-linear-gradient(top, #1990db, #1681c4);
-  background-image: linear-gradient(to bottom, #1990db, #1681c4);
+  background-image: -webkit-gradient(linear,  ,  , from(#1990db), to(#1681c4));
+  background-image: -webkit-linear-gradient( , #1990db, #1681c4);
+  background-image: -moz-linear-gradient( , #1990db, #1681c4);
+  background-image: -o-linear-gradient( , #1990db, #1681c4);
+  background-image: linear-gradient(to  , #1990db, #1681c4);
   box-shadow: inset 0 0 3px #59b3ec;
 }
 .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
   border-color: #116396;
   background-color: #1472ad;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#1784c9), to(#1472ad));
-  background-image: -webkit-linear-gradient(top, #1784c9, #1472ad);
-  background-image: -moz-linear-gradient(top, #1784c9, #1472ad);
-  background-image: -o-linear-gradient(top, #1784c9, #1472ad);
-  background-image: linear-gradient(to bottom, #1784c9, #1472ad);
+  background-image: -webkit-gradient(linear,  ,  , from(#1784c9), to(#1472ad));
+  background-image: -webkit-linear-gradient( , #1784c9, #1472ad);
+  background-image: -moz-linear-gradient( , #1784c9, #1472ad);
+  background-image: -o-linear-gradient( , #1784c9, #1472ad);
+  background-image: linear-gradient(to  , #1784c9, #1472ad);
 }
 .blue-button:active, .blue-button:visited:active {
   background-color: #1990db;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#1681c4), to(#1990db));
-  background-image: -webkit-linear-gradient(top, #1681c4, #1990db);
-  background-image: -moz-linear-gradient(top, #1681c4, #1990db);
-  background-image: -o-linear-gradient(top, #1681c4, #1990db);
-  background-image: linear-gradient(to bottom, #1681c4, #1990db);
+  background-image: -webkit-gradient(linear,  ,  , from(#1681c4), to(#1990db));
+  background-image: -webkit-linear-gradient( , #1681c4, #1990db);
+  background-image: -moz-linear-gradient( , #1681c4, #1990db);
+  background-image: -o-linear-gradient( , #1681c4, #1990db);
+  background-image: linear-gradient(to  , #1681c4, #1990db);
 }
 
 /*
@@ -717,22 +719,17 @@ style a page via class
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-.wrap {
-  width: 96%;
-  margin: 0 auto;
-}
-
 /*********************
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #f01d4f;
+  color: #66a5a5;
   /* on hover */
   /* on click */
   /* mobile tap color */
 }
 a:hover, a:focus, a:visited:hover, a:visited:focus {
-  color: #d10e3c;
+  color: #528b8b;
 }
 a:link, a:visited:link {
   /*
@@ -747,9 +744,9 @@ a:link, a:visited:link {
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Oswald;
   text-rendering: optimizelegibility;
-  font-weight: 500;
+  font-weight: normal;
   /*
   if you're going to use webfonts, be sure to check your weights
   http://css-tricks.com/watch-your-font-weight/
@@ -758,6 +755,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
+  color: #66a5a5;
 }
 
 h1, .h1 {
@@ -790,6 +788,69 @@ h5, .h5 {
 /*********************
 HEADER STYLES
 *********************/
+.header {
+  background: #111;
+  height: 35px;
+  padding: 10px 5px 0;
+  position: relative;
+}
+.header .wrap {
+  height: 100%;
+}
+.header .wrap #logo {
+  background: url(../images/logo.png) no-repeat;
+  background-size: contain;
+  text-indent: -9999px;
+  height: 100%;
+  margin: 0;
+}
+.header .wrap nav .nav-activator {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: url(../images/nav-icon.png) no-repeat 13px 16px;
+  width: 20px;
+  height: 20px;
+  padding: 12px 13px 13px 12px;
+  text-indent: -9999px;
+}
+.header .wrap nav .nav {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  display: none;
+  width: 100%;
+  background: #111;
+  /* opacity:0;
+  @include transition(opacity .35s); */
+}
+.header .wrap nav .nav > li {
+  position: relative;
+}
+.header .wrap nav .nav > li > a {
+  padding-left: 20px;
+  background-color: #111111;
+  background-image: -webkit-gradient(linear, left , left , from(black), to(#111111));
+  background-image: -webkit-linear-gradient(left , black, #111111);
+  background-image: -moz-linear-gradient(left , black, #111111);
+  background-image: -o-linear-gradient(left , black, #111111);
+  background-image: linear-gradient(to right , black, #111111);
+}
+.header .wrap nav .nav > li > a:before {
+  border-color: transparent #66a5a5;
+  border-style: solid;
+  border-width: 5px 0 5px 10px;
+  content: "";
+  margin-right: 5px;
+  position: absolute;
+  left: 5px;
+  top: 18px;
+}
+.header .wrap nav:hover .nav {
+  /* visibility:visible;
+  opacity:1;*/
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -801,13 +862,12 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 .nav {
-  border: 1px solid #ccc;
   border-bottom: 0;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
 }
-.nav li {
+.nav > li {
   /*
   so you really have to rethink your dropdowns for mobile.
   you don't want to have it expand too much because the
@@ -816,21 +876,16 @@ and more scalable.
   http://www.alistapart.com/articles/organizing-mobile/
   */
 }
-.nav li a {
+.nav > li > a {
   display: block;
   text-decoration: none;
-  padding: 10px 10px;
-  background-color: #eee;
-  border-bottom: 1px solid #ccc;
-  /*
-  remember this is for mobile ONLY, so there's no need
-  to even declare hover styles here, you can do it in
-  the style.scss file where it's relevant. We want to
-  keep this file as small as possible!
-  */
+  padding: 10px 5px;
+  background-color: #111;
+  border-bottom: 1px solid #222;
+  font-family: Oswald;
 }
-.nav li ul.sub-menu li a,
-.nav li ul.children li a {
+.nav > li ul.sub-menu li a,
+.nav > li ul.children li a {
   padding-left: 30px;
 }
 

@@ -22,20 +22,12 @@ CLEARFIXIN'
 // Contain floats: nicolasgallagher.com/micro-clearfix-hack/
 .clearfix {
   zoom: 1;
-	&:before, &:after { content: ""; display: table; }
-	&:after { clear: both; }
+	&:after { content:""; height:0; display:block; font-size:0; visibility:0; clear: both; }
 }
 
 /*********************
 TOOLS
 *********************/
-
-// BORDER-BOX ALL THE THINGS! (http://paulirish.com/2012/box-sizing-border-box-ftw/)
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:    border-box;
-	box-sizing:         border-box;
-}
 
 // http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
 .image-replacement {
@@ -51,19 +43,20 @@ Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
 
-$alert-yellow:      #ebe16f;
-$alert-red:         #fbe3e4;
-$alert-green:       #e6efc2;
-$alert-blue:        #d5edf8;
+$alert-yellow:        #ebe16f;
+$alert-red:           #fbe3e4;
+$alert-green:         #e6efc2;
+$alert-blue:          #d5edf8;
 
-$black:             #000;
-$white:             #fff;
+$black:               #000;
+$white:               #fff;
 
-$bones-pink:        #f01d4f;
-$bones-blue:        #1990db;
+$bones-pink:          #f01d4f;
+$bones-blue:          #1990db;
 
-$link-color:        $bones-pink;
-$link-hover:        darken($link-color, 9%);
+$link-color:          #66a5a5;
+$link-hover:          darken($link-color, 9%);
+$heading-link-color:  $link-color;
 
 /*
 Here's a great tutorial on how to
@@ -79,6 +72,7 @@ TYPOGRAPHY
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
 
 /* 	To embed your own fonts, use this syntax
 	and place your fonts inside the
@@ -159,7 +153,7 @@ USAGE: @include transition(all 0.2s ease-in-out);
 
 @mixin transition($transition...) {
 	// defining prefixes so we can use them in mixins below
-	$prefixes:      ("-webkit",  "");
+	$prefixes:      ("-webkit", "-moz", "-ms", "-o",  "");
   @each $prefix in $prefixes {
     #{$prefix}-transition: $transition;
   }
@@ -174,13 +168,13 @@ really slow down your CSS. Don't overdo it.
 *********************/
 
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
-@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
+@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8, $vstart:"", $vend:"", $hstart:"", $hend:"" ) {
 	background-color: $to;
-	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
-	background-image: -webkit-linear-gradient(top, $from, $to);
-	background-image: -moz-linear-gradient(top, $from, $to);
-	background-image: -o-linear-gradient(top, $from, $to);
-	background-image: linear-gradient(to bottom, $from, $to);
+	background-image: -webkit-gradient(linear, unquote($hstart) unquote($vstart), unquote($hstart) unquote($vend), from($from), to($to));
+	background-image: -webkit-linear-gradient(unquote($hstart) unquote($vstart), $from, $to);
+	background-image: -moz-linear-gradient(unquote($hstart) unquote($vstart), $from, $to);
+	background-image: -o-linear-gradient(unquote($hstart) unquote($vstart), $from, $to);
+	background-image: linear-gradient(to unquote($hend) unquote($vend), $from, $to);
 }
 
 /*********************
