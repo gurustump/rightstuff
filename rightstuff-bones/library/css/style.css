@@ -818,7 +818,7 @@ HEADER STYLES
   height: 100%;
 }
 .header .wrap #logo > a {
-  background: url(../images/logo.png) no-repeat;
+  background: url(../images/Logo.png) no-repeat;
   background-size: contain;
   text-indent: -9999px;
   height: 100%;
@@ -1783,7 +1783,7 @@ you can add resource intensive styles.
     padding-top: 0;
   }
   body.home #content #mainTouts > li > a:hover > .img-wrap > img, body.home #content .featured-posts > ul > li > a:hover > .img-wrap > img {
-    opacity: .5;
+    opacity: .7;
     width: 114%;
     margin-left: -7%;
     margin-top: -3%;
