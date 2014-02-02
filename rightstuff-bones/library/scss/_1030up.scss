@@ -8,3 +8,86 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 
 
 ******************************************************************/
+#container {
+	.wrap {
+		width:1030px;
+		margin:0 auto;
+		padding:0;
+	}
+}
+body.home {
+	#content {
+		#main {
+			width:auto;
+		}
+		#mainTouts, .featured-posts > ul {
+			& > li {
+				background:none;
+				& > a {
+					& > .img-wrap {
+						img {
+						}
+					}
+					.title-wrap {
+						padding-top:15px;
+					}
+					&:hover {
+						& > .img-wrap {
+							& > img {
+							}
+						}
+					}
+				}
+			}
+		}
+		#mainTouts {
+			&:after {
+				@include clearfixer;
+			}
+			& > li {
+				width:481px;
+				float:left;
+				border-right:1px solid #eee;
+				& > a {
+					& > .img-wrap {
+						width:300px;
+						height:168px;
+					}
+					.title-wrap {
+						.title {
+							font-size:18px;
+						}
+					}
+				}
+				&:first-child {
+					background:none;
+					width:528px;
+					height:367px;
+					padding-top:0;
+					margin-right:20px;
+					border-right:0;
+					& > a {
+						& > .img-wrap {
+							width:100%;
+							height:297px;
+							float:none;
+							&:before {
+								@include triangle-up;
+							}
+							&:after {
+								@include triangle-up($color:#ccc,$border:26px,$offset:-1px,$z:1);
+							}
+						}
+						.title-wrap {
+							.title {
+								font-size:24px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.featured-pagination {
+		}
+	}
+}

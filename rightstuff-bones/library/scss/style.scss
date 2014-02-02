@@ -60,6 +60,17 @@ you can add resource intensive styles.
 
 } // end of media query
 
+
+/*
+SMALLER LAPTOPS
+*/
+@media only screen and (min-width: 900px) {
+
+	// styles in 768up.scss
+	@import "900up";
+
+} // end of media query
+
 /*
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and

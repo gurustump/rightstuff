@@ -50,6 +50,7 @@ require_once( 'library/custom-post-types.php' ); // you can disable this if you 
 // Thumbnail sizes
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'tout-thumb-528', 528, 297, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -178,6 +179,15 @@ function bones_wpsearch($form) {
 	</form>';
 	return $form;
 } // don't remove this bracket!
+
+function wpa_category_nav_class( $classes, $item ){
+	if( 'category' == $item->object ){
+		$category = get_category( $item->object_id );
+		$classes[] = 'MENU_' . strtoupper($category->slug);
+	}
+	return $classes;
+}
+add_filter( 'nav_menu_css_class', 'wpa_category_nav_class', 10, 2 );
 
 // Meta Box setup (works only with plugin)
 include 'includes/meta-box.php';

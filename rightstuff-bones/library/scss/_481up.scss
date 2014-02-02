@@ -70,6 +70,17 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+body.home {
+	#container {
+		padding-top:60px;
+	}
+	#content {
+		#main {
+			width:480px;
+			margin:0 auto;
+		}
+	}
+}
 
 /* entry content */
 .entry-content {

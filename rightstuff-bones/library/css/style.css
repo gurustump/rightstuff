@@ -453,10 +453,10 @@ remember less is more.
 /*********************
 CLEARFIXIN'
 *********************/
-.clearfix {
+.clearfix, body.home #content #mainTouts > li, body.home #content .featured-posts > ul > li, body.home #content .twt .twt-posts > li {
   zoom: 1;
 }
-.clearfix:after {
+.clearfix:after, body.home #content #mainTouts > li:after, body.home #content .featured-posts > ul > li:after, body.home #content .twt .twt-posts > li:after {
   content: "";
   height: 0;
   display: block;
@@ -591,6 +591,10 @@ BUTTONS
   cursor: pointer;
   margin-bottom: 20px;
   line-height: 21px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
   border-radius: 4px;
   background-color: #599898;
   background-image: -webkit-gradient(linear,  ,  , from(#66a5a5), to(#599898));
@@ -671,10 +675,17 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 body {
-  font-family: "Georgia", Cambria, Times New Roman, Times, serif;
-  font-size: 100%;
-  line-height: 1.5;
-  color: #565656;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4em;
+  color: #333333;
+}
+
+.banner {
+  margin-bottom: 6px;
+}
+.banner > img {
+  width: 100%;
 }
 
 /********************
@@ -755,7 +766,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
-  color: #66a5a5;
+  color: #cc3366;
 }
 
 h1, .h1 {
@@ -791,24 +802,33 @@ HEADER STYLES
 .header {
   background: #111;
   height: 35px;
-  padding: 10px 5px 0;
-  position: relative;
+  padding: 10px 0 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9998;
 }
 .header .wrap {
+  padding: 0 40px 0 5px;
   height: 100%;
 }
 .header .wrap #logo {
+  margin: 0;
+  height: 100%;
+}
+.header .wrap #logo > a {
   background: url(../images/logo.png) no-repeat;
   background-size: contain;
   text-indent: -9999px;
   height: 100%;
-  margin: 0;
+  display: block;
 }
 .header .wrap nav .nav-activator {
   position: absolute;
   right: 0;
   top: 0;
-  background: url(../images/nav-icon.png) no-repeat 13px 16px;
+  background: url(../images/ic-sprite.png) no-repeat 13px 16px;
   width: 20px;
   height: 20px;
   padding: 12px 13px 13px 12px;
@@ -844,7 +864,7 @@ HEADER STYLES
   margin-right: 5px;
   position: absolute;
   left: 5px;
-  top: 18px;
+  top: 15px;
 }
 .header .wrap nav:hover .nav {
   /* visibility:visible;
@@ -893,8 +913,133 @@ and more scalable.
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-#content {
-  margin-top: 2.2em;
+body.home #container {
+  padding-top: 45px;
+}
+body.home #content #mainTouts > li, body.home #content .featured-posts > ul > li {
+  margin-bottom: 15px;
+}
+body.home #content #mainTouts > li > a, body.home #content .featured-posts > ul > li > a {
+  display: block;
+  text-decoration: none;
+  color: #cc3366;
+}
+body.home #content #mainTouts > li > a > .img-wrap, body.home #content .featured-posts > ul > li > a > .img-wrap {
+  background: #cc3366;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+body.home #content #mainTouts > li > a > .img-wrap:before, body.home #content .featured-posts > ul > li > a > .img-wrap:before {
+  border-color: white transparent;
+  border-style: solid;
+  border-width: 0 25px 25px 25px;
+  content: "";
+  margin-left: 0;
+  margin-top: 0;
+  position: absolute;
+  left: 15px;
+  right: auto;
+  bottom: 0;
+  top: auto;
+  z-index: 2;
+}
+body.home #content #mainTouts > li > a > .img-wrap:after, body.home #content .featured-posts > ul > li > a > .img-wrap:after {
+  border-color: #cccccc transparent;
+  border-style: solid;
+  border-width: 0 26px 26px 26px;
+  content: "";
+  margin-left: -1px;
+  margin-top: 0;
+  position: absolute;
+  left: 15px;
+  right: auto;
+  bottom: 0;
+  top: auto;
+  z-index: 1;
+}
+body.home #content #mainTouts > li > a > .img-wrap img, body.home #content .featured-posts > ul > li > a > .img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+body.home #content #mainTouts > li > a .title-wrap, body.home #content .featured-posts > ul > li > a .title-wrap {
+  display: block;
+  position: relative;
+  padding: 15px;
+}
+body.home #content #mainTouts > li > a .title-wrap .title, body.home #content .featured-posts > ul > li > a .title-wrap .title {
+  font-family: Oswald;
+  display: block;
+  font-size: 22px;
+  line-height: 24px;
+  margin-bottom: 5px;
+}
+body.home #content #mainTouts > li > a .title-wrap .excerpt, body.home #content .featured-posts > ul > li > a .title-wrap .excerpt {
+  display: block;
+  font-size: 12px;
+}
+body.home #content .featured-posts {
+  margin-bottom: 35px;
+}
+body.home #content .featured-pagination {
+  text-align: center;
+  margin: -15px 0 15px;
+}
+body.home #content .featured-pagination .show-more {
+  background: #111111 url(../images/ic-sprite.png) no-repeat 10px -48px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: oswald;
+  font-size: 16px;
+  height: 40px;
+  line-height: 39px;
+  width: 96px;
+  padding-left: 30px;
+  display: inline-block;
+}
+body.home #content .featured-pagination .show-more:hover {
+  background-color: #000;
+  color: #cc3366;
+}
+body.home #content .content-secondary {
+  margin-bottom: 20px;
+}
+body.home #content .twt {
+  background: #fff3f3;
+}
+body.home #content .twt .twt-heading {
+  text-indent: -9999px;
+  background: #6c0c16 url(../images/twt-special-white.png) no-repeat 50% 50%;
+  height: 40px;
+  margin-bottom: 0;
+}
+body.home #content .twt .twt-posts > li {
+  padding: 15px;
+  font-size: 14px;
+}
+body.home #content .twt .twt-posts > li > a {
+  text-decoration: none;
+  color: #333333;
+}
+body.home #content .twt .twt-posts > li > a > img {
+  float: left;
+  margin: 0 10px 0 0;
+  width: 100px;
+  height: 100px;
+}
+body.home #content .twt .twt-posts > li > a .title {
+  color: #6c0c16;
+  font-family: oswald;
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
 /* end .hentry */
@@ -1205,6 +1350,7 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
+  padding: 0 15px;
 }
 
 /*
@@ -1217,6 +1363,42 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
+#wpadminbar_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+#wpadminbar_wrap > .show-wp-admin {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 20px;
+  width: 40px;
+  text-indent: -9999px;
+  background-color: #111111;
+  background-image: -webkit-gradient(linear,  top,  bottom, from(#222222), to(#111111));
+  background-image: -webkit-linear-gradient( top, #222222, #111111);
+  background-image: -moz-linear-gradient( top, #222222, #111111);
+  background-image: -o-linear-gradient( top, #222222, #111111);
+  background-image: linear-gradient(to  bottom, #222222, #111111);
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #222;
+  border-top: 0;
+  cursor: pointer;
+}
+#wpadminbar_wrap.showing {
+  height: 46px;
+}
+#wpadminbar_wrap.showing > .show-wp-admin {
+  top: 46px;
+}
+
 /*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -1268,6 +1450,14 @@ tweeners.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
+  body.home #container {
+    padding-top: 60px;
+  }
+  body.home #content #main {
+    width: 480px;
+    margin: 0 auto;
+  }
+
   /* entry content */
   .entry-content {
     /* at this larger size, we can start to align images */
@@ -1418,6 +1608,13 @@ you can add resource intensive styles.
   /*********************
   GENERAL STYLES
   *********************/
+  .banner {
+    width: 728px;
+    margin: 8px auto 24px;
+    height: 90px;
+    overflow: hidden;
+  }
+
   /*********************
   LAYOUT & GRID STYLES
   *********************/
@@ -1428,6 +1625,41 @@ you can add resource intensive styles.
   /*********************
   HEADER STYLES
   *********************/
+  .header .wrap #logo {
+    float: left;
+    width: 275px;
+    margin-right: 10px;
+  }
+  .header .wrap nav {
+    float: left;
+  }
+  .header .wrap nav .nav-activator {
+    display: none;
+  }
+  .header .wrap nav .nav {
+    display: block;
+    width: auto;
+    position: static;
+  }
+  .header .wrap nav .nav > li > a {
+    height: 35px;
+    line-height: 30px;
+    background: transparent;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #aaa;
+    font-family: oswald;
+    border-left: 1px solid #333;
+    padding: 0 10px;
+  }
+  .header .wrap nav .nav > li > a:before {
+    display: none;
+  }
+  .header .wrap nav .nav > li > a:hover {
+    background: #fc0;
+    color: #000;
+  }
+
   /*********************
   NAVIGATION STYLES
   *********************/
@@ -1497,6 +1729,84 @@ you can add resource intensive styles.
   }
 
   /* end .nav */
+  body.home #content #main {
+    width: auto;
+  }
+  body.home #content #mainTouts > li, body.home #content .featured-posts > ul > li {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  body.home #content #mainTouts > li > a, body.home #content .featured-posts > ul > li > a {
+    position: relative;
+  }
+  body.home #content #mainTouts > li > a > .img-wrap, body.home #content .featured-posts > ul > li > a > .img-wrap {
+    width: 448px;
+    height: 228px;
+    float: left;
+    margin-right: 20px;
+    position: relative;
+  }
+  body.home #content #mainTouts > li > a > .img-wrap:before, body.home #content .featured-posts > ul > li > a > .img-wrap:before {
+    border-color: transparent white;
+    border-style: solid;
+    border-width: 25px 25px 25px 0;
+    margin-left: 0;
+    margin-top: 0;
+    position: absolute;
+    left: auto;
+    right: 0;
+    bottom: auto;
+    top: 25px;
+    z-index: 2;
+  }
+  body.home #content #mainTouts > li > a > .img-wrap:after, body.home #content .featured-posts > ul > li > a > .img-wrap:after {
+    border-color: transparent #cccccc;
+    border-style: solid;
+    border-width: 26px 26px 26px 0;
+    margin-left: 0;
+    margin-top: -1px;
+    position: absolute;
+    left: auto;
+    right: 0;
+    bottom: auto;
+    top: 25px;
+    z-index: 1;
+  }
+  body.home #content #mainTouts > li > a > .img-wrap img, body.home #content .featured-posts > ul > li > a > .img-wrap img {
+    -webkit-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
+    -moz-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
+    -ms-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
+    -o-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
+    transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
+  }
+  body.home #content #mainTouts > li > a .title-wrap, body.home #content .featured-posts > ul > li > a .title-wrap {
+    padding-top: 0;
+  }
+  body.home #content #mainTouts > li > a:hover > .img-wrap > img, body.home #content .featured-posts > ul > li > a:hover > .img-wrap > img {
+    opacity: .5;
+    width: 114%;
+    margin-left: -7%;
+    margin-top: -3%;
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+  body.home #content #mainTouts > li:first-child {
+    background: #111;
+    padding-top: 15px;
+  }
+  body.home #content #mainTouts > li:first-child > a > .img-wrap:before {
+    border-color: transparent #111;
+  }
+  body.home #content #mainTouts > li:first-child > a > .img-wrap:after {
+    border-color: transparent #444;
+  }
+  body.home #content .featured-pagination {
+    margin-top: 0;
+  }
+
   /*********************
   SIDEBARS & ASIDES
   *********************/
@@ -1552,6 +1862,18 @@ you can add resource intensive styles.
   /* end .footer-links */
 }
 /*
+SMALLER LAPTOPS
+*/
+@media only screen and (min-width: 900px) {
+  /******************************************************************
+  Site Name: 
+  Author: 
+  
+  Stylesheet: Smaller Laptop Stylsheet
+  
+  ******************************************************************/
+}
+/*
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where
@@ -1568,6 +1890,85 @@ you can add resource intensive styles.
   be seen on the Desktop. 
   
   ******************************************************************/
+  #container .wrap {
+    width: 1030px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  body.home #content #main {
+    width: auto;
+  }
+  body.home #content #mainTouts > li, body.home #content .featured-posts > ul > li {
+    background: none;
+  }
+  body.home #content #mainTouts > li > a .title-wrap, body.home #content .featured-posts > ul > li > a .title-wrap {
+    padding-top: 15px;
+  }
+  body.home #content #mainTouts:after {
+    content: "";
+    height: 0;
+    display: block;
+    font-size: 0;
+    visibility: 0;
+    clear: both;
+  }
+  body.home #content #mainTouts > li {
+    width: 481px;
+    float: left;
+    border-right: 1px solid #eee;
+  }
+  body.home #content #mainTouts > li > a > .img-wrap {
+    width: 300px;
+    height: 168px;
+  }
+  body.home #content #mainTouts > li > a .title-wrap .title {
+    font-size: 18px;
+  }
+  body.home #content #mainTouts > li:first-child {
+    background: none;
+    width: 528px;
+    height: 367px;
+    padding-top: 0;
+    margin-right: 20px;
+    border-right: 0;
+  }
+  body.home #content #mainTouts > li:first-child > a > .img-wrap {
+    width: 100%;
+    height: 297px;
+    float: none;
+  }
+  body.home #content #mainTouts > li:first-child > a > .img-wrap:before {
+    border-color: white transparent;
+    border-style: solid;
+    border-width: 0 25px 25px 25px;
+    content: "";
+    margin-left: 0;
+    margin-top: 0;
+    position: absolute;
+    left: 15px;
+    right: auto;
+    bottom: 0;
+    top: auto;
+    z-index: 2;
+  }
+  body.home #content #mainTouts > li:first-child > a > .img-wrap:after {
+    border-color: #cccccc transparent;
+    border-style: solid;
+    border-width: 0 26px 26px 26px;
+    content: "";
+    margin-left: -1px;
+    margin-top: 0;
+    position: absolute;
+    left: 15px;
+    right: auto;
+    bottom: 0;
+    top: auto;
+    z-index: 1;
+  }
+  body.home #content #mainTouts > li:first-child > a .title-wrap .title {
+    font-size: 24px;
+  }
 }
 /*
 LARGE VIEWING SIZE

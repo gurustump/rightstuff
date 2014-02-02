@@ -14,12 +14,17 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
-
 body {
-	font-family: $serif;
-	font-size: 100%;
-	line-height: 1.5;
-	color: #565656;
+	font-family:$sans-serif;
+	font-size:14px;
+	line-height:1.4em;
+	color:$base-color;
+}
+.banner {
+	margin-bottom:6px;
+	& > img {
+		width:100%;
+	}
 }
 
 /********************
@@ -153,23 +158,32 @@ HEADER STYLES
 .header {
 	background:#111;
 	height:35px;
-	padding:10px 5px 0;
-	position:relative;
+	padding:10px 0 0;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:9998;
 	.wrap {
+		padding:0 40px 0 5px;
 		height:100%;
 		#logo {
-			background:url(../images/logo.png) no-repeat;
-			background-size:contain;
-			text-indent:-9999px;
-			height:100%;
 			margin:0;
+			height:100%;
+			& > a {
+				background:url(../images/logo.png) no-repeat;
+				background-size:contain;
+				text-indent:-9999px;
+				height:100%;
+				display:block;
+			}
 		}
 		nav {
 			.nav-activator {
 				position:absolute;
 				right:0;
 				top:0;
-				background:url(../images/nav-icon.png) no-repeat 13px 16px;
+				background:url(../images/ic-sprite.png) no-repeat 13px 16px;
 				width:20px;
 				height:20px;
 				padding:12px 13px 13px 12px;
@@ -197,7 +211,7 @@ HEADER STYLES
 							margin-right:5px;
 							position:absolute;
 							left:5px;
-							top:18px;
+							top:15px;
 						}
 					}
 				}
@@ -287,161 +301,273 @@ and more scalable.
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-
+body.home {
+	#container {
+		padding-top:45px;
+	}
+	#content {
+		#mainTouts, .featured-posts > ul {
+			& > li {
+				margin-bottom:15px;
+				@extend .clearfix;
+				& > a {
+					display:block;
+					text-decoration:none;
+					color:$heading-link-color;
+					& > .img-wrap {
+						background:$rs-pink;
+						overflow:hidden;
+						position:relative;
+						display:block;
+						&:before {
+							@include triangle-up;
+						}
+						&:after {
+							@include triangle-up($color:#ccc,$border:26px,$offset:-1px,$z:1);
+						}
+						img {
+							width:100%;
+							height:auto;
+							display:block;
+						}
+					}
+					.title-wrap {
+						display:block;
+						position:relative;
+						padding:15px;
+						//@include css-gradient($from:#111,$to:#222,$vstart:top,$vend:bottom);
+						.title {
+							font-family:Oswald;
+							display:block;
+							font-size:22px;
+							line-height:24px;
+							margin-bottom:5px;
+						}
+						.excerpt {
+							display:block;
+							font-size:12px;
+						}
+					}
+				}
+			}
+		}
+		.featured-posts {
+			margin-bottom:35px;
+		}
+		.featured-pagination {
+			text-align:center;
+			margin:-15px 0 15px;
+			.show-more {
+				background:#111 url(../images/ic-sprite.png) no-repeat 10px -48px;
+				@include border-radius(5px);
+				color:#fff;
+				text-decoration:none;
+				text-transform:uppercase;
+				font-family:oswald;
+				font-size:16px;
+				height:40px;
+				line-height:39px;
+				width:96px;
+				padding-left:30px;
+				display:inline-block;
+				&:hover {
+					background-color:#000;
+					color:$rs-pink;
+				}
+			}
+		}
+		.content-secondary {
+			margin-bottom:20px;
+		}
+		.twt {
+			background:#fff3f3;
+			.twt-heading {
+				text-indent:-9999px;
+				background:$twt-color url(../images/twt-special-white.png) no-repeat 50% 50%;
+				height:40px;
+				margin-bottom:0;
+			}
+			.twt-posts {
+				& > li {
+					padding:15px;
+					font-size:14px;
+					@extend .clearfix;
+					& > a {
+						text-decoration:none;
+						color:$base-color;
+						& > img {
+							float:left;
+							margin:0 10px 0 0;
+							width:100px;
+							height:100px;
+						}
+						.title {
+							color:$twt-color;
+							font-family:oswald;
+							display:block;
+							font-size:16px;
+							margin-bottom:5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+	
 #content {
-	margin-top: 2.2em;
 }
 
-		.hentry {
+.hentry {
 
-			header {}
+	header {}
 
-			footer {}
+	footer {}
 
-		} /* end .hentry */
+} /* end .hentry */
 
-		.single-title,
-		.page-title {}
+.single-title,
+.page-title {}
 
-		.single-title {}
+.single-title {}
 
-		.page-title {}
+.page-title {}
 
-		.archive-title { }
+.archive-title { }
 
-		/* want to style individual post classes? Booya! */
-		.post-id {}         /* post by id (i.e. post-3) */
-		.post {}            /* general post style */
-		.page {}            /* general article on a page style */
-		.attachment {}      /* general style on an attatchment */
-		.sticky {}          /* sticky post style */
-		.hentry {}          /* hentry class */
-		.category-slug {}   /* style by category (i.e. category-videos) */
-		.tag-slug {}        /* style by tag (i.e. tag-news) */
+/* want to style individual post classes? Booya! */
+.post-id {}         /* post by id (i.e. post-3) */
+.post {}            /* general post style */
+.page {}            /* general article on a page style */
+.attachment {}      /* general style on an attatchment */
+.sticky {}          /* sticky post style */
+.hentry {}          /* hentry class */
+.category-slug {}   /* style by category (i.e. category-videos) */
+.tag-slug {}        /* style by tag (i.e. tag-news) */
 
-		/* post meta */
-		.byline {
-			color: #999;
+/* post meta */
+.byline {
+	color: #999;
 
-			time {}
-		}
+	time {}
+}
 
-		/* entry content */
-		.entry-content {
+/* entry content */
+.entry-content {
 
-			p {}
+	p {}
 
 
-			ul, ol, table, dl {}
+	ul, ol, table, dl {}
 
-			ul, ol {
+	ul, ol {
 
-				li {}
+		li {}
 
-			}
+	}
 
-			ul {
+	ul {
 
-				li {}
+		li {}
 
-			}
+	}
 
-			ol {
+	ol {
 
-				li {}
+		li {}
 
-			}
+	}
 
-			blockquote {
+	blockquote {
 
-				&:before {}
+		&:before {}
 
-			}
+	}
 
-			dl {}
+	dl {}
 
-			dt {}
+	dt {}
 
-			dd {
-				margin-left: 0;
-				font-size: 0.9em;
-				color: #787878;
-				margin-bottom: 1.5em;
-			}
+	dd {
+		margin-left: 0;
+		font-size: 0.9em;
+		color: #787878;
+		margin-bottom: 1.5em;
+	}
 
-			img {
-				margin: 0 0 1.5em 0;
-				max-width: 100%;
-				height: auto;
-			}
+	img {
+		margin: 0 0 1.5em 0;
+		max-width: 100%;
+		height: auto;
+	}
 
-			/*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/
-			.alignleft, img.alignleft {}
-			.alignright, img.alignright {}
-			.aligncenter, img.aligncenter {}
+	/*
+	image alignment on a screen this size may be
+	a bit difficult. It's set to start aligning
+	and floating images at the next breakpoint,
+	but it's up to you. Feel free to change it up.
+	*/
+	.alignleft, img.alignleft {}
+	.alignright, img.alignright {}
+	.aligncenter, img.aligncenter {}
 
-			video, object {
-				max-width: 100%;
-				height: auto;
-			}
+	video, object {
+		max-width: 100%;
+		height: auto;
+	}
 
-			pre {
-				background: #eee;
-				border: 1px solid #cecece;
-				padding: 10px;
-			}
+	pre {
+		background: #eee;
+		border: 1px solid #cecece;
+		padding: 10px;
+	}
 
-		} /* end .entry-content */
+} /* end .entry-content */
 
-		.wp-caption {
-			max-width: 100%;
-			background: #eee;
-			padding: 5px;
+.wp-caption {
+	max-width: 100%;
+	background: #eee;
+	padding: 5px;
 
-			/* images inside wp-caption */
-			img {
-				max-width: 100%;
-				margin-bottom: 0;
-				width: 100%;
-			}
+	/* images inside wp-caption */
+	img {
+		max-width: 100%;
+		margin-bottom: 0;
+		width: 100%;
+	}
 
-			p.wp-caption-text {
-				font-size: 0.85em;
-				margin: 4px 0 7px;
-				text-align: center;
-			}
+	p.wp-caption-text {
+		font-size: 0.85em;
+		margin: 4px 0 7px;
+		text-align: center;
+	}
 
-		} /* end .wp-caption */
+} /* end .wp-caption */
 
-		/* image gallery styles */
-		.gallery {
+/* image gallery styles */
+.gallery {
 
-			dl {
+	dl {
 
-				a {}
+		a {}
 
-				img {}
+		img {}
 
-			}
+	}
 
-			dt {}
+	dt {}
 
-			dd {}
+	dd {}
 
-		} /* end .gallery */
+} /* end .gallery */
 
-		/* gallery caption styles */
-		.gallery-caption {}
+/* gallery caption styles */
+.gallery-caption {}
 
-		.size-full {}
-		.size-large {}
-		.size-medium {}
-		.size-thumbnail {}
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -804,7 +930,8 @@ FOOTER STYLES
 *********************/
 
 .footer {
-	clear: both;
+	clear:both;
+	padding:0 15px;
 }
 
 	/*
@@ -829,3 +956,29 @@ FOOTER STYLES
 
 	.copyright {}
 
+#wpadminbar_wrap {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:9999;
+	& > .show-wp-admin {
+		display:block;
+		position:absolute;
+		left:0;
+		top:0;
+		height:20px;
+		width:40px;
+		text-indent:-9999px;
+		@include css-gradient($from: #222, $to: #111, $vstart:"top", $vend:"bottom");
+		@include border-radius(0 0 5px 5px);
+		border:1px solid #222;
+		border-top:0;
+		cursor:pointer;
+	}
+	&.showing {
+		height:46px;
+		& > .show-wp-admin {
+			top:46px;
+		}
+	}
+}

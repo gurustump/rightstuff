@@ -64,11 +64,6 @@ jQuery(document).ready(function($) {
 	
 	}
 	
-	
-	$('.nav-activator').click(function() {
-		$(this).siblings('.nav').slideToggle()
-	})
-	
 	$('.SHOW_MORE').click(function(e) {
 		e.preventDefault()
 		var activator = $(this)
@@ -77,7 +72,6 @@ jQuery(document).ready(function($) {
 			type:'GET',
 			url:activator.attr('href')+'&offset='+featuredOffset,
 			success:function(data) {
-				console.log(data)
 				if (data.count_total - featuredOffset < 6) {
 					activator.fadeOut();
 					console.log($(this))
@@ -96,7 +90,19 @@ jQuery(document).ready(function($) {
 			}
 		})
 	})
- 
+	
+	
+	$('.nav-activator').click(function() {
+		$(this).siblings('.nav').slideToggle()
+	})
+	// Hide wp admin bar
+	$('html').css('cssText','margin-top:0 !important;')
+	$('#wpadminbar').slideUp(2000, function() {
+		$(this).wrap('<div id="wpadminbar_wrap"></div>').after('<a class="show-wp-admin SHOW_WP_ADMIN">Show WP Admin Bar</a>')
+	})
+	$('body').on('click','#wpadminbar_wrap .SHOW_WP_ADMIN',function() {
+		$(this).parent('#wpadminbar_wrap').toggleClass('showing').find('#wpadminbar').slideToggle(250)
+	})
 }); /* end of as page load scripts */
 
 

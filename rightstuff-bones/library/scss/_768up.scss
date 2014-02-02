@@ -19,6 +19,13 @@ GENERAL STYLES
 
 body {}
 
+.banner {
+	width:728px;
+	margin:8px auto 24px;
+	height:90px;
+	overflow:hidden;
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -31,7 +38,46 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	.wrap {
+		#logo {
+			float:left;
+			width:275px;
+			margin-right:10px;
+		}
+		nav {
+			float:left;
+			.nav-activator {
+				display:none;
+			}
+			.nav {
+				display:block;
+				width:auto;
+				position:static;
+				& > li {
+					& > a {
+						height:35px;
+						line-height:30px;
+						background:transparent;
+						font-size:24px;
+						text-transform:uppercase;
+						color:#aaa;
+						font-family:oswald;
+						border-left:1px solid #333;
+						padding:0 10px;
+						&:before {
+							display:none;
+						}
+						&:hover {
+							background:#fc0;
+							color:#000;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 	#logo {}
 
@@ -135,6 +181,73 @@ NAVIGATION STYLES
 
 } /* end .nav */
 
+body.home {
+	#content {
+		#main {
+			width:auto;
+		}
+		#mainTouts, .featured-posts > ul {
+			& > li {
+				padding-bottom:15px;
+				border-bottom:1px solid #eee;
+				& > a {
+					position:relative;
+					& > .img-wrap {
+						width:448px;
+						height:228px;
+						float:left;
+						margin-right:20px;
+						position:relative;
+						&:before {
+							@include triangle-left;
+						}
+						&:after {
+							@include triangle-left($color:#ccc,$border:26px,$offset:-1px,$z:1);
+						}
+						img {
+							@include transition(opacity .5s,height .75s,width .75s,margin-left .75s,margin-top .75s,transform 1s)
+						}
+					}
+					.title-wrap {
+						padding-top:0;
+					}
+					&:hover {
+						& > .img-wrap {
+							& > img {
+								opacity:.5;
+								width:114%;
+								margin-left:-7%;
+								margin-top:-3%;
+								@include transform(rotate(2deg));
+							}
+						}
+					}
+				}
+			}
+		}
+		#mainTouts {
+			& > li {
+				&:first-child {
+					background:#111;
+					padding-top:15px;
+					& > a {
+						& > .img-wrap {
+							&:before {
+								border-color:transparent #111;
+							}
+							&:after {
+								border-color:transparent #444;
+							}
+						}
+					}
+				}
+			}
+		}
+		.featured-pagination {
+			margin-top:0;
+		}
+	}
+}
 /*********************
 SIDEBARS & ASIDES
 *********************/
