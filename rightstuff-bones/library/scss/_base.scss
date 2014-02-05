@@ -335,6 +335,9 @@ POSTS & CONTENT STYLES
 body.home {
 	#content {
 		margin:0;
+		#main {
+			float:none;
+		}
 		#mainTouts, .featured-posts > ul {
 			& > li {
 				margin-bottom:15px;

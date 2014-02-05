@@ -974,6 +974,9 @@ POSTS & CONTENT STYLES
 body.home #content {
   margin: 0;
 }
+body.home #content #main {
+  float: none;
+}
 body.home #content #mainTouts > li, body.home #content .featured-posts > ul > li {
   margin-bottom: 15px;
 }
