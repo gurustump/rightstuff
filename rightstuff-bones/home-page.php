@@ -8,19 +8,16 @@ Template Name: Home Page
 			<div id="content">
 				<div id="inner-content" class="wrap">
 					<div id="main" role="main">
-						<div class="banner">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/banners/C011_FII_SitCash_InvestOut_Article_728x90_0511_001.gif" alt="ad" />
-						</div>
 						<ul id="mainTouts">
 						<?php 
-						$touts_args = array(
+						$highlight_args = array(
 							'numberposts'		=> 3,
-							'category_name'		=> 'main-touts',
+							'category_name'		=> 'highlighted',
 							'order'				=> 'ASC',
 							'orderby'			=> 'meta_value',
 							'meta_key'			=> 'right_stuff_rank'
 						);
-						$mainTouts = get_posts($touts_args);
+						$mainTouts = get_posts($highlight_args);
 						if ( isset($mainTouts[0]) ) { 
 							foreach($mainTouts as $key => $tout) {
 								$imageCount = count(get_post_meta($tout->ID,'right_stuff_test_image'));

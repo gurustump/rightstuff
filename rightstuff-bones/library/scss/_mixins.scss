@@ -262,6 +262,21 @@ BUTTONS
 	}
 }
 
+.btn {
+	display:inline-block;
+	@include border-radius(3px);
+	@include css-gradient( $rs-blue, darken($rs-blue, 5%), top, bottom );
+	border:0;
+	color:#fff;
+	font-family:Oswald;
+	font-size:14px;
+	padding:0 20px;
+	text-shadow:0 0 2px rgba(0,0,0,.35);
+	&:hover {
+		@include css-gradient( $rs-blue, darken($rs-blue, 20%), top, bottom );
+	}
+}
+
 @mixin triangle-up($color:#fff,$border:25px,$offset:0,$z:2) {
 	border-color:$color transparent;
 	border-style:solid;

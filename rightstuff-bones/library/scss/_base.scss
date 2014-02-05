@@ -20,12 +20,6 @@ body {
 	line-height:1.4em;
 	color:$base-color;
 }
-.banner {
-	margin-bottom:6px;
-	& > img {
-		width:100%;
-	}
-}
 
 /********************
 WORDPRESS BODY CLASSES
@@ -72,7 +66,30 @@ style a page via class
 LAYOUT & GRID STYLES
 *********************/
 
+#container {
+	padding-top:45px;
+	.banner-wrap {
+		.banner {
+			margin-bottom:6px;
+			& > img {
+				width:100%;
+			}
+		}
+	}
+}
 .wrap {
+}
+#main {
+	article {
+		h1 {
+			color:$link-color;
+		}
+		.video-wrap {
+			iframe {
+				width:100%;
+			}
+		}
+	}
 }
 
 /*********************
@@ -178,48 +195,62 @@ HEADER STYLES
 				display:block;
 			}
 		}
-		nav {
-			.nav-activator {
-				position:absolute;
-				right:0;
-				top:0;
-				background:url(../images/ic-sprite.png) no-repeat 13px 16px;
-				width:20px;
-				height:20px;
-				padding:12px 13px 13px 12px;
-				text-indent:-9999px;
-			}
-			.nav {
-				position:absolute;
-				top:45px;
-				right:0;
-				display:none;
-				width:100%;
-				background:#111;
-				/* opacity:0;
-				@include transition(opacity .35s); */
-				& > li {
-					position:relative;
-					& > a {
-						padding-left:20px;
-						@include css-gradient($from: #000, $to: #111, $vstart:"", $vend:"", $hstart:left, $hend:right);
-						&:before {
-							border-color:transparent $link-color;
-							border-style:solid;
-							border-width:5px 0 5px 10px;
-							content:"";
-							margin-right:5px;
-							position:absolute;
-							left:5px;
-							top:15px;
+		.nav-activator {
+			position:absolute;
+			right:0;
+			top:0;
+			background:url(../images/ic-sprite.png) no-repeat 13px 16px;
+			width:20px;
+			height:20px;
+			padding:12px 13px 13px 12px;
+			text-indent:-9999px;
+		}
+		.nav-wrap {
+			position:absolute;
+			top:45px;
+			right:0;
+			display:none;
+			width:100%;
+			background:#111;
+			nav {
+				.nav {
+					background:none;
+					& > li {
+						position:relative;
+						& > a {
+							padding-left:20px;
+							@include css-gradient($from: #000, $to: #111, $vstart:"", $vend:"", $hstart:left, $hend:right);
+							&:before {
+								border-color:transparent $link-color;
+								border-style:solid;
+								border-width:5px 0 5px 10px;
+								content:"";
+								margin-right:5px;
+								position:absolute;
+								left:5px;
+								top:15px;
+							}
 						}
 					}
 				}
+				&:hover {
+					.nav {
+						/* visibility:visible;
+						opacity:1;*/
+					}
+				}
 			}
-			&:hover {
-				.nav {
-					/* visibility:visible;
-					opacity:1;*/
+			.search-show {
+				display:none;
+			}
+			.search-form {
+				@include css-gradient($from: #000, $to: #111, $vstart:"", $vend:"", $hstart:left, $hend:right);
+				height:45px;
+				line-height:45px;
+				padding-right:5px;
+				text-align:right;
+				button {
+					border:0;
 				}
 			}
 		}
@@ -302,10 +333,8 @@ and more scalable.
 POSTS & CONTENT STYLES
 *********************/
 body.home {
-	#container {
-		padding-top:45px;
-	}
 	#content {
+		margin:0;
 		#mainTouts, .featured-posts > ul {
 			& > li {
 				margin-bottom:15px;
@@ -414,8 +443,11 @@ body.home {
 		}
 	}
 }
+body.single {
+}
 	
 #content {
+	margin:0 10px;
 }
 
 .hentry {
@@ -900,7 +932,9 @@ COMMENT FORM STYLES
 SIDEBARS & ASIDES
 *********************/
 
-.sidebar {}
+.sidebar {
+	display:none;
+}
 
 	.widgettitle {}
 

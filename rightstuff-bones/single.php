@@ -13,14 +13,31 @@
 								<header class="article-header">
 
 									<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-									<p class="byline vcard"><?php
+									<!--<p class="byline vcard"><?php
 										printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&amp;</span> filed under %4$s.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')), bones_get_the_author_posts_link(), get_the_category_list(', ') );
-									?></p>
+									?></p>-->
 
 								</header>
 
 								<section class="entry-content clearfix" itemprop="articleBody">
-									<?php the_content(); ?>
+									<div class="section-primary">
+										<?php the_content(); ?>
+									</div>
+									
+									<?php 
+										$videoEmbeds = get_post_meta(get_the_ID(),'right_stuff_video-embed',true); 
+										foreach($videoEmbeds as $key => $video) { ?>
+										<div class="video-wrap">
+											<?php echo $video; ?>
+										</div>
+										<?php } ?>
+									
+									<div class="section-secondary">
+										<?php 
+											$secondaryContent = get_post_meta(get_the_ID(),'right_stuff_secondary',true); 
+											echo $secondaryContent;
+										?>
+									</div>
 								</section>
 
 								<footer class="article-footer">
@@ -28,7 +45,7 @@
 
 								</footer>
 
-								<?php comments_template(); ?>
+								<?php /* comments_template(); */ ?>
 
 							</article>
 

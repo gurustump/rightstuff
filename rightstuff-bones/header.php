@@ -45,7 +45,7 @@
 
 			<header class="header" role="banner">
 
-				<div id="inner-header" class="wrap clearfix">
+				<div id="inner-header" class="wrap">
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
@@ -54,11 +54,20 @@
 					<?php // bloginfo('description'); ?>
 
 
-					<nav role="navigation">
-						<a class="nav-activator">Navigation</a>
-						<?php bones_main_nav(); ?>
-					</nav>
-
+					<a class="nav-activator">Navigation</a>
+					<div class="nav-wrap NAV_WRAP">
+						<nav role="navigation">
+							<?php bones_main_nav(); ?>
+						</nav>
+						<a class="search-show SEARCH_SHOW">Show Search Form</a>
+						<?php get_search_form(); ?>
+					</div>
 				</div>
 
 			</header>
+			
+			<div class="wrap banner-wrap">
+				<div class="banner">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/banners/C011_FII_SitCash_InvestOut_Article_728x90_0511_001.gif" alt="ad" />
+				</div>
+			</div>

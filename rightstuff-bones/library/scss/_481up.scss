@@ -16,7 +16,14 @@ upon your base.scss styles.
 ******************************************************************/
 
 
-	
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+#container {
+	padding-top:45px;
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -71,9 +78,6 @@ NAVIGATION STYLES
 POSTS & CONTENT STYLES
 *********************/
 body.home {
-	#container {
-		padding-top:60px;
-	}
 	#content {
 		#main {
 			width:480px;

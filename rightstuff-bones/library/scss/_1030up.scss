@@ -15,6 +15,20 @@ be seen on the Desktop.
 		padding:0;
 	}
 }
+#main {
+	width:700px;
+	margin-right:30px;
+	article {
+		h1 {
+			font-size:48px;
+		}
+	}
+}
+#sidebar {
+	float:left;
+	width:300px;
+	margin:0;
+}
 body.home {
 	#content {
 		#main {

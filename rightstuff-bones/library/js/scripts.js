@@ -74,7 +74,6 @@ jQuery(document).ready(function($) {
 			success:function(data) {
 				if (data.count_total - featuredOffset < 6) {
 					activator.fadeOut();
-					console.log($(this))
 				}
 				$.each(data.posts, function(i,post) {
 					$('<li class="featured_'+(i+featuredOffset)+'">'+
@@ -92,8 +91,13 @@ jQuery(document).ready(function($) {
 	})
 	
 	
-	$('.nav-activator').click(function() {
-		$(this).siblings('.nav').slideToggle()
+	$('.nav-activator').click(function(e) {
+		e.preventDefault()
+		$(this).siblings('.NAV_WRAP').slideToggle()
+	})
+	$('.SEARCH_SHOW').click(function(e) {
+		e.preventDefault()
+		$('.SEARCH_FORM').slideToggle()
 	})
 	// Hide wp admin bar
 	$('html').css('cssText','margin-top:0 !important;')

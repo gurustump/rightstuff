@@ -19,19 +19,32 @@ GENERAL STYLES
 
 body {}
 
-.banner {
-	width:728px;
-	margin:8px auto 24px;
-	height:90px;
-	overflow:hidden;
-}
 
 /*********************
 LAYOUT & GRID STYLES
 *********************/
 
+#container {
+	padding-top:60px;
+	.wrap.banner-wrap {
+		background:url(../images/bg-banner.png) 50% 50% no-repeat;
+		margin:15px auto 30px;
+		.banner {
+			width:728px;
+			margin:0 auto;
+			height:90px;
+			overflow:hidden;
+		}
+	}
+}
 .wrap {
 	max-width: 1140px;
+	width:100%;
+}
+#main {
+	float:left;
+	margin-right:330px;
+	width:auto;
 }
 
 /*********************
@@ -39,41 +52,66 @@ HEADER STYLES
 *********************/
 
 .header {
+	#inner-header {
+		position:relative;
+	}
 	.wrap {
 		#logo {
 			float:left;
 			width:275px;
 			margin-right:10px;
 		}
-		nav {
-			float:left;
-			.nav-activator {
-				display:none;
-			}
-			.nav {
-				display:block;
-				width:auto;
-				position:static;
-				& > li {
-					& > a {
-						height:35px;
-						line-height:30px;
-						background:transparent;
-						font-size:24px;
-						text-transform:uppercase;
-						color:#aaa;
-						font-family:oswald;
-						border-left:1px solid #333;
-						padding:0 10px;
-						&:before {
-							display:none;
-						}
-						&:hover {
-							background:#fc0;
-							color:#000;
+		.nav-activator {
+			display:none;
+		}
+		.nav-wrap {
+			display:block;
+			width:auto;
+			position:static;
+			nav {
+				float:left;
+				.nav {
+					& > li {
+						& > a {
+							height:35px;
+							line-height:30px;
+							background:transparent;
+							font-size:24px;
+							text-transform:uppercase;
+							color:#aaa;
+							font-family:oswald;
+							border-left:1px solid #333;
+							padding:0 10px;
+							&:before {
+								display:none;
+							}
+							&:hover {
+								background:#fc0;
+								color:#000;
+							}
 						}
 					}
 				}
+			}
+			.search-show {
+				display:block;
+				float:right;
+				background:transparent url(../images/ic-sprite.png) no-repeat 50% -111px;
+				text-indent:-9999px;
+				width:45px;
+				height:45px;
+				margin:-10px 0;
+				padding:0;
+			}
+			.search-form {
+				padding:0 10px;
+				display:none;
+				position:absolute;
+				right:0;
+				top:35px;
+				height:32px;
+				line-height:25px;
+				@include border-radius(0 0 4px 4px);
 			}
 		}
 	}
@@ -253,7 +291,34 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	margin-top: 2.2em;
+	display:block;
+	float:left;
+	width:300px;
+	margin-left:-310px;
+	ul.featured {
+		& > li {
+			margin-bottom:20px;
+			@include border-radius(4px);
+			overflow:hidden;
+			position:relative;
+			img {
+				display:block;
+			}
+			.title-wrap {
+				position:absolute;
+				bottom:10px;
+				left:0;
+				background:rgba(0,0,0,.75);
+				color:#fff;
+				text-align:center;
+				font-family:Oswald;
+				font-size:14px;
+				padding:8px;
+				width:100%;
+				@include box-sizing;
+			}
+		}
+	}
 }
 
 	.widgettitle {

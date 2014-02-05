@@ -61,6 +61,15 @@ function right_stuff_register_meta_boxes( $meta_boxes )
 				'rows' => 3,
 			),
 			array(
+				'name'  => __( 'Video Embed', 'rwmb' ),
+				'id'    => "{$prefix}video-embed",
+				'desc'  => __( 'Embed code for videos', 'rwmb' ),
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+				'clone' => true,
+			),
+			array(
 				'name'  => __( 'Rank', 'rwmb' ),
 				'id'    => "{$prefix}rank",
 				'desc'  => __( 'Ranking for manually ordered lists', 'rwmb' ),

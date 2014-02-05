@@ -51,6 +51,7 @@ require_once( 'library/custom-post-types.php' ); // you can disable this if you 
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 add_image_size( 'tout-thumb-528', 528, 297, true );
+add_image_size( 'sidebar-thumb-300', 300, 200, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -93,16 +94,17 @@ new image size.
 
 // Sidebars & Widgetizes Areas
 function bones_register_sidebars() {
+/*
 	register_sidebar(array(
-		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'bonestheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
+		'id' => 'header_widgets',
+		'name' => __( 'Header Widgets', 'bonestheme' ),
+		'description' => __( 'For inclusion in the header (mainly for search)', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
-
+*/
 	/*
 	to add more sidebars or widgetized areas, just copy
 	and edit the above sidebar code. In order to call
@@ -172,10 +174,9 @@ function bones_comments( $comment, $args, $depth ) {
 
 // Search Form
 function bones_wpsearch($form) {
-	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-	<label class="screen-reader-text" for="s">' . __( 'Search for:', 'bonestheme' ) . '</label>
-	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_attr__( 'Search the Site...', 'bonestheme' ) . '" />
-	<input type="submit" id="searchsubmit" value="' . esc_attr__( 'Search' ) .'" />
+	$form = '<form role="search" method="get" class="search-form SEARCH_FORM" action="' . home_url( '/' ) . '" >
+	<input type="search" value="' . get_search_query() . '" name="s" placeholder="' . esc_attr__( 'Search...', 'bonestheme' ) . '" />
+	<button class="btn" type="submit">Search</button>
 	</form>';
 	return $form;
 } // don't remove this bracket!
