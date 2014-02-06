@@ -1,30 +1,7 @@
 				<div id="sidebar" class="sidebar" role="complementary">
-					<?php if (is_category('news')) { ?>
-					<div class="twt">
-						<h2 class="twt-heading">The Washington Times</h2>
-						<ul class="twt-posts">
-						<?php 
-						$twt_args = array(
-							'numberposts'	=> 3,
-							'post_type'		=> 'twt_article'
-						);
-						$twtPosts = get_posts($twt_args);
-						if ( isset($twtPosts[0]) ) { 
-							foreach($twtPosts as $key => $post) { ?>
-							<li class="twt_<?php echo $key; ?>">
-								<a href="<?php echo get_permalink($post->ID); ?>">
-									<?php echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
-									<span class="title-wrap">
-										<span class="title"><?php echo $post->post_title; ?></span>
-										<span class="excerpt"><?php echo $post->post_content; ?></span>
-									</span>
-								</a>
-							</li>
-						<?php } } ?>
-						
-						</ul>
-					</div>
-					<?php } ?>
+					<?php if (is_category('news')) { 
+						include 'includes/twt-articles.php'; 
+					} ?>
 					<ul class="posts-list">
 					<?php 
 					$featured_args = array(

@@ -29,7 +29,7 @@ function right_stuff_register_meta_boxes( $meta_boxes )
 	// Better has an underscore as last sign
 	$prefix = 'right_stuff_';
 
-	// 1st meta box
+	// Post, Page metaboxes
 	$meta_boxes[] = array(
 		// Meta box id, UNIQUE per meta box. Optional since 4.1.5
 		'id' => 'custom-fields',
@@ -92,6 +92,38 @@ function right_stuff_register_meta_boxes( $meta_boxes )
 				),
 			)
 		)
+	);
+	
+	// TWT Articles Meta Boxes
+	$meta_boxes[] = array(
+
+		// Meta box title - Will appear at the drag and drop handle bar. Required.
+		'title' => __( 'TWT Fields', 'rwmb' ),
+
+		// Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+		'pages' => array( 'twt_article' ),
+
+		// Where the meta box appear: normal (default), advanced, side. Optional.
+		'context' => 'normal',
+
+		// Order of meta box: high (default), low. Optional.
+		'priority' => 'high',
+
+		// Auto save: true, false (default). Optional.
+		'autosave' => true,
+
+		// List of meta fields
+		'fields' => array(
+			// Rank
+			array(
+				'name' => __( 'TWT Article URL', 'rwmb' ),
+				'desc' => __( 'URL to the original Washington Times Article', 'rwmb' ),
+				'id'   => "{$prefix}twt_article",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 1,
+			),
+		),
 	);
 
 	return $meta_boxes;
