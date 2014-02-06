@@ -61,6 +61,8 @@ $base-color:          #333;
 $rs-pink:             #cc3366;
 $rs-blue:             #66a5a5;
 $twt-color:           #6c0c16;
+$fb-blue:             #305891;
+$twit-blue:           #2ca8d2;
 
 $link-color:          $rs-blue;
 $link-hover:          darken($link-color, 9%);
@@ -264,6 +266,8 @@ BUTTONS
 
 .btn {
 	display:inline-block;
+	text-align:center;
+	text-decoration:none;
 	@include border-radius(3px);
 	@include css-gradient( $rs-blue, darken($rs-blue, 5%), top, bottom );
 	border:0;
@@ -273,7 +277,25 @@ BUTTONS
 	padding:0 20px;
 	text-shadow:0 0 2px rgba(0,0,0,.35);
 	&:hover {
+		color:#fff;
 		@include css-gradient( $rs-blue, darken($rs-blue, 20%), top, bottom );
+	}
+	&.large {
+		height:32px;
+		line-height:32px;
+		padding:5px 20px;
+	}
+}
+.btn-fb {
+	background:$fb-blue;
+	&:hover {
+		background:lighten($fb-blue, 15%);
+	}
+}
+.btn-twit {
+	background:$twit-blue;
+	&:hover {
+		background:lighten($twit-blue, 15%);
 	}
 }
 

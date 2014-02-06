@@ -26,6 +26,7 @@ if (!window.getComputedStyle) {
 		return this;
 	}
 }
+RS = {} // global namespace for rightstuff functions
 
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {
@@ -107,6 +108,18 @@ jQuery(document).ready(function($) {
 	$('body').on('click','#wpadminbar_wrap .SHOW_WP_ADMIN',function() {
 		$(this).parent('#wpadminbar_wrap').toggleClass('showing').find('#wpadminbar').slideToggle(250)
 	})
+	RS.resizeVideo = function(vidRatio) {
+		jQuery('.VIDEO iframe').attr('height',jQuery('.VIDEO').width() * vidRatio)
+	}
+	if ($('.VIDEO').length > 0) {
+		var vidHeight = $('.VIDEO iframe').attr('height')?$('.VIDEO iframe').attr('height'):$('.VIDEO iframe').height()
+		var vidWidth = $('.VIDEO iframe').attr('width')?$('.VIDEO iframe').attr('width'):$('.VIDEO iframe').width()
+		var vidRatio = vidHeight / vidWidth;
+		RS.resizeVideo(vidRatio)
+		$(window).resize(function() {
+			RS.resizeVideo(vidRatio)
+		})
+	}
 }); /* end of as page load scripts */
 
 

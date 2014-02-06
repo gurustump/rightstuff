@@ -79,18 +79,6 @@ LAYOUT & GRID STYLES
 }
 .wrap {
 }
-#main {
-	article {
-		h1 {
-			color:$link-color;
-		}
-		.video-wrap {
-			iframe {
-				width:100%;
-			}
-		}
-	}
-}
 
 /*********************
 LINK STYLES
@@ -126,7 +114,7 @@ H1, H2, H3, H4, H5 STYLES
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	font-family:Oswald;
-	text-rendering: optimizelegibility;
+	text-rendering:optimizelegibility;
 	font-weight:normal;
 	
 	/*
@@ -136,14 +124,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 	/* removing text decoration from all headline links */
 	a {
-		text-decoration: none;
+		text-decoration:none;
 		color:$heading-link-color;
 	}
 }
 
 h1, .h1 {
-	font-size: 2.5em;
-	line-height: 1.333em;
+	font-size:2.5em;
+	line-height:1.333em;
 }
 
 h2, .h2 {
@@ -338,54 +326,6 @@ body.home {
 		#main {
 			float:none;
 		}
-		#mainTouts, .featured-posts > ul {
-			& > li {
-				margin-bottom:15px;
-				@extend .clearfix;
-				& > a {
-					display:block;
-					text-decoration:none;
-					color:$heading-link-color;
-					& > .img-wrap {
-						background:$rs-pink;
-						overflow:hidden;
-						position:relative;
-						display:block;
-						&:before {
-							@include triangle-up;
-						}
-						&:after {
-							@include triangle-up($color:#ccc,$border:26px,$offset:-1px,$z:1);
-						}
-						img {
-							width:100%;
-							height:auto;
-							display:block;
-						}
-					}
-					.title-wrap {
-						display:block;
-						position:relative;
-						padding:15px;
-						//@include css-gradient($from:#111,$to:#222,$vstart:top,$vend:bottom);
-						.title {
-							font-family:Oswald;
-							display:block;
-							font-size:22px;
-							line-height:24px;
-							margin-bottom:5px;
-						}
-						.excerpt {
-							display:block;
-							font-size:12px;
-						}
-					}
-				}
-			}
-		}
-		.featured-posts {
-			margin-bottom:35px;
-		}
 		.featured-pagination {
 			text-align:center;
 			margin:-15px 0 15px;
@@ -410,47 +350,189 @@ body.home {
 		}
 		.content-secondary {
 			margin-bottom:20px;
+			clear:both;
 		}
-		.twt {
-			background:#fff3f3;
-			.twt-heading {
-				text-indent:-9999px;
-				background:$twt-color url(../images/twt-special-white.png) no-repeat 50% 50%;
-				height:40px;
-				margin-bottom:0;
+	}
+}
+body.archive {
+	#content {
+		margin:0;
+		h1 {
+			color:$rs-pink;
+			padding-left:15px;
+			font-size:30px;
+			border-bottom:1px solid #eee;
+			border-top:1px solid #eee;
+			/* background:$rs-pink; */
+			margin-bottom:25px;
+		}
+	}
+}
+body.home #mainTouts, body.home .featured-posts > ul, .posts-list {
+	& > li {
+		margin-bottom:15px;
+		@extend .clearfix;
+		& > a {
+			display:block;
+			text-decoration:none;
+			color:$heading-link-color;
+			& > .img-wrap {
+				background:$rs-pink;
+				overflow:hidden;
+				position:relative;
+				display:block;
+				&:before {
+					@include triangle-up;
+				}
+				&:after {
+					@include triangle-up($color:#ccc,$border:26px,$offset:-1px,$z:1);
+				}
+				img {
+					width:100%;
+					height:auto;
+					display:block;
+				}
 			}
-			.twt-posts {
-				& > li {
-					padding:15px;
-					font-size:14px;
-					@extend .clearfix;
-					& > a {
-						text-decoration:none;
-						color:$base-color;
-						& > img {
-							float:left;
-							margin:0 10px 0 0;
-							width:100px;
-							height:100px;
-						}
-						.title {
-							color:$twt-color;
-							font-family:oswald;
-							display:block;
-							font-size:16px;
-							margin-bottom:5px;
-						}
+			.title-wrap {
+				display:block;
+				position:relative;
+				padding:15px;
+				//@include css-gradient($from:#111,$to:#222,$vstart:top,$vend:bottom);
+				.title {
+					font-family:Oswald;
+					display:block;
+					font-size:22px;
+					line-height:24px;
+					margin-bottom:5px;
+				}
+				.excerpt {
+					display:block;
+					font-size:12px;
+				}
+			}
+		}
+		.excerpt-read-more {
+			margin-left:15px;
+		}
+	}
+}
+body.home .featured-posts {
+	margin-bottom:35px;
+}
+
+#content {
+	margin:0 10px;
+}
+#main {
+	article {
+		h1 {
+			color:$link-color;
+			margin-bottom:10px;
+		}
+		.section-primary {
+			.post-meta {
+				display:none;
+				margin-bottom:-41px;
+				font-size:11px;
+				font-family:Oswald;
+				color:#aaa;
+				padding-left:5px;
+			}
+			.addthis_toolbox {
+				height:32px;
+				text-align:right;
+				background:#ffe;
+				border-top:1px dotted #ccc;
+				border-bottom:1px dotted #ccc;
+				padding:5px 5px 5px 0;
+				& > a {
+					float:none;
+					display:inline-block;
+					&.addthis_counter {
+						float:right;
 					}
 				}
+			}
+			.post-content-wrap {
+				clear:both;
+				margin:25px 0;
+			}
+		}
+		.video-wrap {
+			iframe {
+				width:100%;
+				display:block;
+			}
+		}
+		.section-secondary {
+			margin:10px 0 25px;
+			.addthis_toolbox {
+				margin:0;
+				.btn-fb, .btn-twit {
+					width:49%;
+					@include box-sizing;
+					height:56px;
+					line-height:56px;
+					padding:0;
+					font-size:14px;
+					float:left;
+					span {
+						display:inline-block;
+						float:none;
+						height:56px;
+						padding-left:30px;
+						background:url(../images/ic-sprite.png) no-repeat 0 -244px;
+					}
+				}
+				.btn-fb {
+					margin-right:2%;
+					span {
+						padding-left:20px;
+						background-position:0 -176px;
+					}
+				}
+				&:after {
+					@include clearfixer;
+				}
+			}
+			.post-secondary-wrap {
+				padding-top:25px;
 			}
 		}
 	}
 }
-body.single {
-}
-	
-#content {
-	margin:0 10px;
+.twt {
+	background:#fff3f3;
+	.twt-heading {
+		text-indent:-9999px;
+		background:$twt-color url(../images/twt-special-white.png) no-repeat 50% 50%;
+		height:40px;
+		margin-bottom:0;
+	}
+	.twt-posts {
+		& > li {
+			padding:15px;
+			font-size:14px;
+			@extend .clearfix;
+			& > a {
+				text-decoration:none;
+				color:$base-color;
+				& > img {
+					float:left;
+					margin:0 10px 0 0;
+					width:100px;
+					height:100px;
+				}
+				.title {
+					color:$twt-color;
+					font-family:oswald;
+					display:block;
+					font-size:16px;
+					margin-bottom:5px;
+				}
+			}
+		}
+	}
 }
 
 .hentry {
@@ -936,7 +1018,26 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	display:none;
+	.posts-list {
+		display:none;
+	}
+	.twt {
+		margin-bottom:20px;
+		h2 {
+			height:40px;
+		}
+		.twt-posts {
+			& > li {
+				& > a {
+					display:block;
+				}
+			}
+		}
+	}
+	.banner {
+		width:300px;
+		margin:0 auto;
+	}
 }
 
 	.widgettitle {}

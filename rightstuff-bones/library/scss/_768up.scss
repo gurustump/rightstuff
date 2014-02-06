@@ -224,98 +224,111 @@ body.home {
 		#main {
 			width:auto;
 		}
-		#mainTouts, .featured-posts > ul {
-			& > li {
-				padding-bottom:15px;
-				border-bottom:1px solid #eee;
-				& > a {
-					position:relative;
-					& > .img-wrap {
-						width:448px;
-						height:228px;
-						float:left;
-						margin-right:20px;
-						position:relative;
-						&:before {
-							@include triangle-left;
-						}
-						&:after {
-							@include triangle-left($color:#ccc,$border:26px,$offset:-1px,$z:1);
-						}
-						img {
-							@include transition(opacity .5s,height .75s,width .75s,margin-left .75s,margin-top .75s,transform 1s)
-						}
-					}
-					.title-wrap {
-						padding-top:0;
-					}
-					&:hover {
-						& > .img-wrap {
-							& > img {
-								opacity:.7;
-								width:114%;
-								margin-left:-7%;
-								margin-top:-3%;
-								@include transform(rotate(2deg));
-							}
-						}
-					}
-				}
-			}
-		}
-		#mainTouts {
-			& > li {
-				&:first-child {
-					background:#111;
-					padding-top:15px;
-					& > a {
-						& > .img-wrap {
-							&:before {
-								border-color:transparent #111;
-							}
-							&:after {
-								border-color:transparent #444;
-							}
-						}
-					}
-				}
-			}
-		}
 		.featured-pagination {
 			margin-top:0;
 		}
 	}
 }
+body.archive {
+	#content {
+		#main {
+			width:auto;
+			margin-right:330px;
+			margin-left:10px;
+			.posts-list {
+				& > li {
+					padding-bottom:15px;
+					border-bottom:1px solid #eee;
+					.img-wrap {
+						max-width:528px;
+					}
+				}
+			}
+		}
+	}
+} 
+body.home #mainTouts, body.home .featured-posts > ul {
+	& > li {
+		padding-bottom:15px;
+		border-bottom:1px solid #eee;
+		& > a {
+			position:relative;
+			& > .img-wrap {
+				width:448px;
+				height:228px;
+				float:left;
+				margin-right:20px;
+				position:relative;
+				&:before {
+					@include triangle-left;
+				}
+				&:after {
+					@include triangle-left($color:#ccc,$border:26px,$offset:-1px,$z:1);
+				}
+				img {
+					@include transition(opacity .5s,height .75s,width .75s,margin-left .75s,margin-top .75s,transform 1s)
+				}
+			}
+			.title-wrap {
+				padding-top:0;
+			}
+			&:hover {
+				& > .img-wrap {
+					& > img {
+						opacity:.7;
+						width:114%;
+						margin-left:-7%;
+						margin-top:-3%;
+						@include transform(rotate(2deg));
+					}
+				}
+			}
+		}
+	}
+}
+body.home #mainTouts {
+	& > li {
+		&:first-child {
+			background:#111;
+			padding-top:15px;
+			& > a {
+				& > .img-wrap {
+					&:before {
+						border-color:transparent #111;
+					}
+					&:after {
+						border-color:transparent #444;
+					}
+				}
+			}
+		}
+	}
+}
+
 /*********************
 SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	display:block;
 	float:left;
 	width:300px;
 	margin-left:-310px;
-	ul.featured {
-		& > li {
-			margin-bottom:20px;
-			@include border-radius(4px);
-			overflow:hidden;
-			position:relative;
-			img {
-				display:block;
-			}
-			.title-wrap {
-				position:absolute;
-				bottom:10px;
-				left:0;
-				background:rgba(0,0,0,.75);
-				color:#fff;
-				text-align:center;
-				font-family:Oswald;
-				font-size:14px;
-				padding:8px;
-				width:100%;
-				@include box-sizing;
+	.posts-list {
+		display:block;
+	}
+	.twt {
+		background:none;
+		h2 {
+			height:44px;
+		}
+		.twt-posts {
+			border-left:1px solid #eee;
+			& > li {
+				padding:25px 25px 0;
+				& > a {
+					border-bottom:1px solid #eee;
+					padding-bottom:15px;
+				}
 			}
 		}
 	}

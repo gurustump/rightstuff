@@ -94,17 +94,17 @@ new image size.
 
 // Sidebars & Widgetizes Areas
 function bones_register_sidebars() {
-/*
+
 	register_sidebar(array(
-		'id' => 'header_widgets',
-		'name' => __( 'Header Widgets', 'bonestheme' ),
-		'description' => __( 'For inclusion in the header (mainly for search)', 'bonestheme' ),
+		'id' => 'after_post',
+		'name' => __( 'After Post Widgets', 'bonestheme' ),
+		'description' => __( 'To be added after posts on single pages', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
-*/
+
 	/*
 	to add more sidebars or widgetized areas, just copy
 	and edit the above sidebar code. In order to call
@@ -189,6 +189,18 @@ function wpa_category_nav_class( $classes, $item ){
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'wpa_category_nav_class', 10, 2 );
+
+// wrap the_content in a div
+function content_wrapper($content) {
+	return '<div class="post-content-wrap">'.$content.'</div>';
+}
+add_filter( 'the_content', 'content_wrapper');
+
+// limit number of words in excerpts
+function rs_excerpt_length($length) {
+	return 25;
+}
+add_filter('excerpt_length', 'rs_excerpt_length');
 
 // Meta Box setup (works only with plugin)
 include 'includes/meta-box.php';

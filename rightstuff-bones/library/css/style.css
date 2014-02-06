@@ -453,10 +453,10 @@ remember less is more.
 /*********************
 CLEARFIXIN'
 *********************/
-.clearfix, body.home #content #mainTouts > li, body.home #content .featured-posts > ul > li, body.home #content .twt .twt-posts > li {
+.clearfix, body.home #mainTouts > li, body.home .featured-posts > ul > li, .posts-list > li, .twt .twt-posts > li {
   zoom: 1;
 }
-.clearfix:after, body.home #content #mainTouts > li:after, body.home #content .featured-posts > ul > li:after, body.home #content .twt .twt-posts > li:after {
+.clearfix:after, body.home #mainTouts > li:after, body.home .featured-posts > ul > li:after, .posts-list > li:after, .twt .twt-posts > li:after {
   content: "";
   height: 0;
   display: block;
@@ -655,6 +655,8 @@ BUTTONS
 
 .btn {
   display: inline-block;
+  text-align: center;
+  text-decoration: none;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
@@ -674,12 +676,32 @@ BUTTONS
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
 }
 .btn:hover {
+  color: #fff;
   background-color: #3d6868;
   background-image: -webkit-gradient(linear,  top,  bottom, from(#66a5a5), to(#3d6868));
   background-image: -webkit-linear-gradient( top, #66a5a5, #3d6868);
   background-image: -moz-linear-gradient( top, #66a5a5, #3d6868);
   background-image: -o-linear-gradient( top, #66a5a5, #3d6868);
   background-image: linear-gradient(to  bottom, #66a5a5, #3d6868);
+}
+.btn.large {
+  height: 32px;
+  line-height: 32px;
+  padding: 5px 20px;
+}
+
+.btn-fb {
+  background: #305891;
+}
+.btn-fb:hover {
+  background: #4a7cc3;
+}
+
+.btn-twit {
+  background: #2ca8d2;
+}
+.btn-twit:hover {
+  background: #6bc2e0;
 }
 
 /*
@@ -759,13 +781,6 @@ LAYOUT & GRID STYLES
   margin-bottom: 6px;
 }
 #container .banner-wrap .banner > img {
-  width: 100%;
-}
-
-#main article h1 {
-  color: #66a5a5;
-}
-#main article .video-wrap iframe {
   width: 100%;
 }
 
@@ -977,72 +992,6 @@ body.home #content {
 body.home #content #main {
   float: none;
 }
-body.home #content #mainTouts > li, body.home #content .featured-posts > ul > li {
-  margin-bottom: 15px;
-}
-body.home #content #mainTouts > li > a, body.home #content .featured-posts > ul > li > a {
-  display: block;
-  text-decoration: none;
-  color: #cc3366;
-}
-body.home #content #mainTouts > li > a > .img-wrap, body.home #content .featured-posts > ul > li > a > .img-wrap {
-  background: #cc3366;
-  overflow: hidden;
-  position: relative;
-  display: block;
-}
-body.home #content #mainTouts > li > a > .img-wrap:before, body.home #content .featured-posts > ul > li > a > .img-wrap:before {
-  border-color: white transparent;
-  border-style: solid;
-  border-width: 0 25px 25px 25px;
-  content: "";
-  margin-left: 0;
-  margin-top: 0;
-  position: absolute;
-  left: 15px;
-  right: auto;
-  bottom: 0;
-  top: auto;
-  z-index: 2;
-}
-body.home #content #mainTouts > li > a > .img-wrap:after, body.home #content .featured-posts > ul > li > a > .img-wrap:after {
-  border-color: #cccccc transparent;
-  border-style: solid;
-  border-width: 0 26px 26px 26px;
-  content: "";
-  margin-left: -1px;
-  margin-top: 0;
-  position: absolute;
-  left: 15px;
-  right: auto;
-  bottom: 0;
-  top: auto;
-  z-index: 1;
-}
-body.home #content #mainTouts > li > a > .img-wrap img, body.home #content .featured-posts > ul > li > a > .img-wrap img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-body.home #content #mainTouts > li > a .title-wrap, body.home #content .featured-posts > ul > li > a .title-wrap {
-  display: block;
-  position: relative;
-  padding: 15px;
-}
-body.home #content #mainTouts > li > a .title-wrap .title, body.home #content .featured-posts > ul > li > a .title-wrap .title {
-  font-family: Oswald;
-  display: block;
-  font-size: 22px;
-  line-height: 24px;
-  margin-bottom: 5px;
-}
-body.home #content #mainTouts > li > a .title-wrap .excerpt, body.home #content .featured-posts > ul > li > a .title-wrap .excerpt {
-  display: block;
-  font-size: 12px;
-}
-body.home #content .featured-posts {
-  margin-bottom: 35px;
-}
 body.home #content .featured-pagination {
   text-align: center;
   margin: -15px 0 15px;
@@ -1071,40 +1020,206 @@ body.home #content .featured-pagination .show-more:hover {
 }
 body.home #content .content-secondary {
   margin-bottom: 20px;
+  clear: both;
 }
-body.home #content .twt {
+
+body.archive #content {
+  margin: 0;
+}
+body.archive #content h1 {
+  color: #cc3366;
+  padding-left: 15px;
+  font-size: 30px;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  /* background:$rs-pink; */
+  margin-bottom: 25px;
+}
+
+body.home #mainTouts > li, body.home .featured-posts > ul > li, .posts-list > li {
+  margin-bottom: 15px;
+}
+body.home #mainTouts > li > a, body.home .featured-posts > ul > li > a, .posts-list > li > a {
+  display: block;
+  text-decoration: none;
+  color: #cc3366;
+}
+body.home #mainTouts > li > a > .img-wrap, body.home .featured-posts > ul > li > a > .img-wrap, .posts-list > li > a > .img-wrap {
+  background: #cc3366;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+body.home #mainTouts > li > a > .img-wrap:before, body.home .featured-posts > ul > li > a > .img-wrap:before, .posts-list > li > a > .img-wrap:before {
+  border-color: white transparent;
+  border-style: solid;
+  border-width: 0 25px 25px 25px;
+  content: "";
+  margin-left: 0;
+  margin-top: 0;
+  position: absolute;
+  left: 15px;
+  right: auto;
+  bottom: 0;
+  top: auto;
+  z-index: 2;
+}
+body.home #mainTouts > li > a > .img-wrap:after, body.home .featured-posts > ul > li > a > .img-wrap:after, .posts-list > li > a > .img-wrap:after {
+  border-color: #cccccc transparent;
+  border-style: solid;
+  border-width: 0 26px 26px 26px;
+  content: "";
+  margin-left: -1px;
+  margin-top: 0;
+  position: absolute;
+  left: 15px;
+  right: auto;
+  bottom: 0;
+  top: auto;
+  z-index: 1;
+}
+body.home #mainTouts > li > a > .img-wrap img, body.home .featured-posts > ul > li > a > .img-wrap img, .posts-list > li > a > .img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+body.home #mainTouts > li > a .title-wrap, body.home .featured-posts > ul > li > a .title-wrap, .posts-list > li > a .title-wrap {
+  display: block;
+  position: relative;
+  padding: 15px;
+}
+body.home #mainTouts > li > a .title-wrap .title, body.home .featured-posts > ul > li > a .title-wrap .title, .posts-list > li > a .title-wrap .title {
+  font-family: Oswald;
+  display: block;
+  font-size: 22px;
+  line-height: 24px;
+  margin-bottom: 5px;
+}
+body.home #mainTouts > li > a .title-wrap .excerpt, body.home .featured-posts > ul > li > a .title-wrap .excerpt, .posts-list > li > a .title-wrap .excerpt {
+  display: block;
+  font-size: 12px;
+}
+body.home #mainTouts > li .excerpt-read-more, body.home .featured-posts > ul > li .excerpt-read-more, .posts-list > li .excerpt-read-more {
+  margin-left: 15px;
+}
+
+body.home .featured-posts {
+  margin-bottom: 35px;
+}
+
+#content {
+  margin: 0 10px;
+}
+
+#main article h1 {
+  color: #66a5a5;
+  margin-bottom: 10px;
+}
+#main article .section-primary .post-meta {
+  display: none;
+  margin-bottom: -41px;
+  font-size: 11px;
+  font-family: Oswald;
+  color: #aaa;
+  padding-left: 5px;
+}
+#main article .section-primary .addthis_toolbox {
+  height: 32px;
+  text-align: right;
+  background: #ffe;
+  border-top: 1px dotted #ccc;
+  border-bottom: 1px dotted #ccc;
+  padding: 5px 5px 5px 0;
+}
+#main article .section-primary .addthis_toolbox > a {
+  float: none;
+  display: inline-block;
+}
+#main article .section-primary .addthis_toolbox > a.addthis_counter {
+  float: right;
+}
+#main article .section-primary .post-content-wrap {
+  clear: both;
+  margin: 25px 0;
+}
+#main article .video-wrap iframe {
+  width: 100%;
+  display: block;
+}
+#main article .section-secondary {
+  margin: 10px 0 25px;
+}
+#main article .section-secondary .addthis_toolbox {
+  margin: 0;
+}
+#main article .section-secondary .addthis_toolbox .btn-fb, #main article .section-secondary .addthis_toolbox .btn-twit {
+  width: 49%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 56px;
+  line-height: 56px;
+  padding: 0;
+  font-size: 14px;
+  float: left;
+}
+#main article .section-secondary .addthis_toolbox .btn-fb span, #main article .section-secondary .addthis_toolbox .btn-twit span {
+  display: inline-block;
+  float: none;
+  height: 56px;
+  padding-left: 30px;
+  background: url(../images/ic-sprite.png) no-repeat 0 -244px;
+}
+#main article .section-secondary .addthis_toolbox .btn-fb {
+  margin-right: 2%;
+}
+#main article .section-secondary .addthis_toolbox .btn-fb span {
+  padding-left: 20px;
+  background-position: 0 -176px;
+}
+#main article .section-secondary .addthis_toolbox:after {
+  content: "";
+  height: 0;
+  display: block;
+  font-size: 0;
+  visibility: 0;
+  clear: both;
+}
+#main article .section-secondary .post-secondary-wrap {
+  padding-top: 25px;
+}
+
+.twt {
   background: #fff3f3;
 }
-body.home #content .twt .twt-heading {
+.twt .twt-heading {
   text-indent: -9999px;
   background: #6c0c16 url(../images/twt-special-white.png) no-repeat 50% 50%;
   height: 40px;
   margin-bottom: 0;
 }
-body.home #content .twt .twt-posts > li {
+.twt .twt-posts > li {
   padding: 15px;
   font-size: 14px;
 }
-body.home #content .twt .twt-posts > li > a {
+.twt .twt-posts > li > a {
   text-decoration: none;
   color: #333333;
 }
-body.home #content .twt .twt-posts > li > a > img {
+.twt .twt-posts > li > a > img {
   float: left;
   margin: 0 10px 0 0;
   width: 100px;
   height: 100px;
 }
-body.home #content .twt .twt-posts > li > a .title {
+.twt .twt-posts > li > a .title {
   color: #6c0c16;
   font-family: oswald;
   display: block;
   font-size: 16px;
   margin-bottom: 5px;
-}
-
-#content {
-  margin: 0 10px;
 }
 
 /* end .hentry */
@@ -1406,8 +1521,21 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.sidebar {
+.sidebar .posts-list {
   display: none;
+}
+.sidebar .twt {
+  margin-bottom: 20px;
+}
+.sidebar .twt h2 {
+  height: 40px;
+}
+.sidebar .twt .twt-posts > li > a {
+  display: block;
+}
+.sidebar .banner {
+  width: 300px;
+  margin: 0 auto;
 }
 
 .widget ul li {
@@ -1526,9 +1654,19 @@ tweeners.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
-  body.home #content #main {
+  body.home #content #main, body.archive #content #main {
     width: 480px;
     margin: 0 auto;
+  }
+
+  #main article h1 {
+    margin-bottom: 20px;
+  }
+  #main article .section-primary .post-meta {
+    display: block;
+  }
+  #main article .section-secondary .addthis_toolbox .btn-fb, #main article .section-secondary .addthis_toolbox .btn-twit {
+    font-size: 22px;
   }
 
   /* entry content */
@@ -1846,21 +1984,38 @@ you can add resource intensive styles.
   body.home #content #main {
     width: auto;
   }
-  body.home #content #mainTouts > li, body.home #content .featured-posts > ul > li {
+  body.home #content .featured-pagination {
+    margin-top: 0;
+  }
+
+  body.archive #content #main {
+    width: auto;
+    margin-right: 330px;
+    margin-left: 10px;
+  }
+  body.archive #content #main .posts-list > li {
     padding-bottom: 15px;
     border-bottom: 1px solid #eee;
   }
-  body.home #content #mainTouts > li > a, body.home #content .featured-posts > ul > li > a {
+  body.archive #content #main .posts-list > li .img-wrap {
+    max-width: 528px;
+  }
+
+  body.home #mainTouts > li, body.home .featured-posts > ul > li {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  body.home #mainTouts > li > a, body.home .featured-posts > ul > li > a {
     position: relative;
   }
-  body.home #content #mainTouts > li > a > .img-wrap, body.home #content .featured-posts > ul > li > a > .img-wrap {
+  body.home #mainTouts > li > a > .img-wrap, body.home .featured-posts > ul > li > a > .img-wrap {
     width: 448px;
     height: 228px;
     float: left;
     margin-right: 20px;
     position: relative;
   }
-  body.home #content #mainTouts > li > a > .img-wrap:before, body.home #content .featured-posts > ul > li > a > .img-wrap:before {
+  body.home #mainTouts > li > a > .img-wrap:before, body.home .featured-posts > ul > li > a > .img-wrap:before {
     border-color: transparent white;
     border-style: solid;
     border-width: 25px 25px 25px 0;
@@ -1873,7 +2028,7 @@ you can add resource intensive styles.
     top: 25px;
     z-index: 2;
   }
-  body.home #content #mainTouts > li > a > .img-wrap:after, body.home #content .featured-posts > ul > li > a > .img-wrap:after {
+  body.home #mainTouts > li > a > .img-wrap:after, body.home .featured-posts > ul > li > a > .img-wrap:after {
     border-color: transparent #cccccc;
     border-style: solid;
     border-width: 26px 26px 26px 0;
@@ -1886,17 +2041,17 @@ you can add resource intensive styles.
     top: 25px;
     z-index: 1;
   }
-  body.home #content #mainTouts > li > a > .img-wrap img, body.home #content .featured-posts > ul > li > a > .img-wrap img {
+  body.home #mainTouts > li > a > .img-wrap img, body.home .featured-posts > ul > li > a > .img-wrap img {
     -webkit-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
     -moz-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
     -ms-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
     -o-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
     transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
   }
-  body.home #content #mainTouts > li > a .title-wrap, body.home #content .featured-posts > ul > li > a .title-wrap {
+  body.home #mainTouts > li > a .title-wrap, body.home .featured-posts > ul > li > a .title-wrap {
     padding-top: 0;
   }
-  body.home #content #mainTouts > li > a:hover > .img-wrap > img, body.home #content .featured-posts > ul > li > a:hover > .img-wrap > img {
+  body.home #mainTouts > li > a:hover > .img-wrap > img, body.home .featured-posts > ul > li > a:hover > .img-wrap > img {
     opacity: .7;
     width: 114%;
     margin-left: -7%;
@@ -1907,58 +2062,44 @@ you can add resource intensive styles.
     -o-transform: rotate(2deg);
     transform: rotate(2deg);
   }
-  body.home #content #mainTouts > li:first-child {
+
+  body.home #mainTouts > li:first-child {
     background: #111;
     padding-top: 15px;
   }
-  body.home #content #mainTouts > li:first-child > a > .img-wrap:before {
+  body.home #mainTouts > li:first-child > a > .img-wrap:before {
     border-color: transparent #111;
   }
-  body.home #content #mainTouts > li:first-child > a > .img-wrap:after {
+  body.home #mainTouts > li:first-child > a > .img-wrap:after {
     border-color: transparent #444;
-  }
-  body.home #content .featured-pagination {
-    margin-top: 0;
   }
 
   /*********************
   SIDEBARS & ASIDES
   *********************/
   .sidebar {
-    display: block;
     float: left;
     width: 300px;
     margin-left: -310px;
   }
-  .sidebar ul.featured > li {
-    margin-bottom: 20px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-  }
-  .sidebar ul.featured > li img {
+  .sidebar .posts-list {
     display: block;
   }
-  .sidebar ul.featured > li .title-wrap {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    background: rgba(0, 0, 0, 0.75);
-    color: #fff;
-    text-align: center;
-    font-family: Oswald;
-    font-size: 14px;
-    padding: 8px;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    box-sizing: border-box;
+  .sidebar .twt {
+    background: none;
+  }
+  .sidebar .twt h2 {
+    height: 44px;
+  }
+  .sidebar .twt .twt-posts {
+    border-left: 1px solid #eee;
+  }
+  .sidebar .twt .twt-posts > li {
+    padding: 25px 25px 0;
+  }
+  .sidebar .twt .twt-posts > li > a {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
   }
 
   .widgettitle {
@@ -2049,6 +2190,7 @@ you can add resource intensive styles.
   }
   #main article h1 {
     font-size: 48px;
+    margin-bottom: 25px;
   }
 
   #sidebar {
@@ -2057,16 +2199,85 @@ you can add resource intensive styles.
     margin: 0;
   }
 
+  body.home #mainTouts > li, body.home .featured-posts > ul > li, .posts-list > li {
+    background: none;
+  }
+  body.home #mainTouts > li > a .title-wrap, body.home .featured-posts > ul > li > a .title-wrap, .posts-list > li > a .title-wrap {
+    padding-top: 15px;
+  }
+
+  body.archive #content #main {
+    width: 700px;
+    margin: 0 30px 0 0;
+  }
+  body.archive #content #main .posts-list {
+    max-width: none;
+  }
+  body.archive #content #main .posts-list > li > a {
+    position: relative;
+  }
+  body.archive #content #main .posts-list > li > a > .img-wrap {
+    width: 448px;
+    height: 228px;
+    float: left;
+    margin-right: 20px;
+    position: relative;
+  }
+  body.archive #content #main .posts-list > li > a > .img-wrap:before {
+    border-color: transparent white;
+    border-style: solid;
+    border-width: 25px 25px 25px 0;
+    margin-left: 0;
+    margin-top: 0;
+    position: absolute;
+    left: auto;
+    right: 0;
+    bottom: auto;
+    top: 25px;
+    z-index: 2;
+  }
+  body.archive #content #main .posts-list > li > a > .img-wrap:after {
+    border-color: transparent #cccccc;
+    border-style: solid;
+    border-width: 26px 26px 26px 0;
+    margin-left: 0;
+    margin-top: -1px;
+    position: absolute;
+    left: auto;
+    right: 0;
+    bottom: auto;
+    top: 25px;
+    z-index: 1;
+  }
+  body.archive #content #main .posts-list > li > a > .img-wrap img {
+    -webkit-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
+    -moz-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
+    -ms-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
+    -o-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
+    transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
+  }
+  body.archive #content #main .posts-list > li > a .title-wrap {
+    padding-top: 0;
+  }
+  body.archive #content #main .posts-list > li > a:hover > .img-wrap > img {
+    opacity: .7;
+    width: 114%;
+    margin-left: -7%;
+    margin-top: -3%;
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+
   body.home #content #main {
     width: auto;
   }
-  body.home #content #mainTouts > li, body.home #content .featured-posts > ul > li {
-    background: none;
+  body.home #mainTouts > li > a .title-wrap .excerpt, body.home .featured-posts > ul > li > a .title-wrap .excerpt {
+    display: none;
   }
-  body.home #content #mainTouts > li > a .title-wrap, body.home #content .featured-posts > ul > li > a .title-wrap {
-    padding-top: 15px;
-  }
-  body.home #content #mainTouts:after {
+  body.home #mainTouts:after {
     content: "";
     height: 0;
     display: block;
@@ -2074,19 +2285,19 @@ you can add resource intensive styles.
     visibility: 0;
     clear: both;
   }
-  body.home #content #mainTouts > li {
+  body.home #mainTouts > li {
     width: 481px;
     float: left;
     border-right: 1px solid #eee;
   }
-  body.home #content #mainTouts > li > a > .img-wrap {
+  body.home #mainTouts > li > a > .img-wrap {
     width: 300px;
     height: 168px;
   }
-  body.home #content #mainTouts > li > a .title-wrap .title {
+  body.home #mainTouts > li > a .title-wrap .title {
     font-size: 18px;
   }
-  body.home #content #mainTouts > li:first-child {
+  body.home #mainTouts > li:first-child {
     background: none;
     width: 528px;
     height: 367px;
@@ -2094,12 +2305,12 @@ you can add resource intensive styles.
     margin-right: 20px;
     border-right: 0;
   }
-  body.home #content #mainTouts > li:first-child > a > .img-wrap {
+  body.home #mainTouts > li:first-child > a > .img-wrap {
     width: 100%;
     height: 297px;
     float: none;
   }
-  body.home #content #mainTouts > li:first-child > a > .img-wrap:before {
+  body.home #mainTouts > li:first-child > a > .img-wrap:before {
     border-color: white transparent;
     border-style: solid;
     border-width: 0 25px 25px 25px;
@@ -2113,7 +2324,7 @@ you can add resource intensive styles.
     top: auto;
     z-index: 2;
   }
-  body.home #content #mainTouts > li:first-child > a > .img-wrap:after {
+  body.home #mainTouts > li:first-child > a > .img-wrap:after {
     border-color: #cccccc transparent;
     border-style: solid;
     border-width: 0 26px 26px 26px;
@@ -2127,8 +2338,56 @@ you can add resource intensive styles.
     top: auto;
     z-index: 1;
   }
-  body.home #content #mainTouts > li:first-child > a .title-wrap .title {
+  body.home #mainTouts > li:first-child > a .title-wrap .title {
     font-size: 24px;
+  }
+  body.home .featured-posts > ul {
+    margin-right: -20px;
+  }
+  body.home .featured-posts > ul > li {
+    width: 330px;
+    float: left;
+    margin-right: 20px;
+  }
+  body.home .featured-posts > ul > li > a > .img-wrap {
+    width: 330px;
+    height: 170px;
+    float: none;
+  }
+  body.home .featured-posts > ul > li > a > .img-wrap:before {
+    border-color: white transparent;
+    border-style: solid;
+    border-width: 0 25px 25px 25px;
+    content: "";
+    margin-left: 0;
+    margin-top: 0;
+    position: absolute;
+    left: 15px;
+    right: auto;
+    bottom: 0;
+    top: auto;
+    z-index: 2;
+  }
+  body.home .featured-posts > ul > li > a > .img-wrap:after {
+    border-color: #cccccc transparent;
+    border-style: solid;
+    border-width: 0 26px 26px 26px;
+    content: "";
+    margin-left: -1px;
+    margin-top: 0;
+    position: absolute;
+    left: 15px;
+    right: auto;
+    bottom: 0;
+    top: auto;
+    z-index: 1;
+  }
+  body.home .featured-posts > ul > li > a .title-wrap {
+    height: 72px;
+  }
+
+  #main article .section-secondary .addthis_toolbox .btn-fb, #main article .section-secondary .addthis_toolbox .btn-twit {
+    font-size: 28px;
   }
 }
 /*

@@ -21,22 +21,29 @@
 
 								<section class="entry-content clearfix" itemprop="articleBody">
 									<div class="section-primary">
+										<div class="post-meta"><?php the_date(); ?></div>
 										<?php the_content(); ?>
 									</div>
 									
 									<?php 
-										$videoEmbeds = get_post_meta(get_the_ID(),'right_stuff_video-embed',true); 
-										foreach($videoEmbeds as $key => $video) { ?>
-										<div class="video-wrap">
-											<?php echo $video; ?>
-										</div>
-										<?php } ?>
+										$videoEmbeds = get_post_meta(get_the_ID(),'right_stuff_video-embed',true); if ( isset($videoEmbeds[0]) ) { 
+											foreach($videoEmbeds as $key => $video) { ?>
+											<div class="video-wrap VIDEO">
+												<?php echo $video; ?>
+											</div>
+										<?php } } ?>
 									
 									<div class="section-secondary">
-										<?php 
+										<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+											<a class="btn btn-fb large addthis_button_facebook"><span class="spirte">Share on Facebook</span></a>
+											<a class="btn btn-twit large addthis_button_twitter"><span class="sprite">Share on Twitter</span></a>
+										</div>
+										<div class="post-secondary-wrap">
+											<?php 
 											$secondaryContent = get_post_meta(get_the_ID(),'right_stuff_secondary',true); 
 											echo $secondaryContent;
-										?>
+											?>
+										</div>
 									</div>
 								</section>
 
@@ -44,7 +51,8 @@
 									<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 
 								</footer>
-
+								
+								
 								<?php /* comments_template(); */ ?>
 
 							</article>

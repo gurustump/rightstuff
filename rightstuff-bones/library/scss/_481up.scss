@@ -77,11 +77,31 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-body.home {
+body.home, body.archive {
 	#content {
 		#main {
 			width:480px;
 			margin:0 auto;
+		}
+	}
+}
+#main {
+	article {
+		h1 {
+			margin-bottom:20px;
+		}
+		.section-primary {
+			.post-meta {
+				display:block;
+			}
+		}
+		.section-secondary {
+			.addthis_toolbox {
+				.btn-fb, .btn-twit {
+					font-size:22px;
+				}
+			}
+		
 		}
 	}
 }
