@@ -67,12 +67,27 @@ LAYOUT & GRID STYLES
 *********************/
 
 #container {
-	padding-top:45px;
+	padding-top:55px;
 	.banner-wrap {
 		.banner {
 			margin-bottom:6px;
 			& > img {
 				width:100%;
+			}
+			.email-collection {
+				color:#aaa;
+				background:#111;
+				text-align:center;
+				padding:10px;
+				@include box-sizing;
+				h3, p {
+					margin-bottom:5px;
+				}
+				.btn-container {
+					.btn {
+						margin-bottom:-6px;
+					}
+				}
 			}
 		}
 	}
@@ -169,6 +184,8 @@ HEADER STYLES
 	left:0;
 	width:100%;
 	z-index:9998;
+	border-bottom:3px solid #fff;
+	box-shadow:0 4px 10px #fff;
 	.wrap {
 		padding:0 40px 0 5px;
 		height:100%;
@@ -351,6 +368,9 @@ body.home {
 		.content-secondary {
 			margin-bottom:20px;
 			clear:both;
+			.twt {
+				margin-bottom:20px;
+			}
 		}
 	}
 }
@@ -533,6 +553,11 @@ body.home .featured-posts {
 			}
 		}
 	}
+}
+.banner300x600 {
+	width:300px;
+	height:600px;
+	margin:0 auto;
 }
 
 .hentry {
@@ -1018,9 +1043,6 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	.posts-list {
-		display:none;
-	}
 	.twt {
 		margin-bottom:20px;
 		h2 {
@@ -1036,6 +1058,7 @@ SIDEBARS & ASIDES
 	}
 	.banner {
 		width:300px;
+		height:600px;
 		margin:0 auto;
 	}
 }

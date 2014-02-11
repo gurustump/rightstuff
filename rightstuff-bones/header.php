@@ -65,9 +65,3 @@
 				</div>
 
 			</header>
-			
-			<div class="wrap banner-wrap">
-				<div class="banner">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/banners/C011_FII_SitCash_InvestOut_Article_728x90_0511_001.gif" alt="ad" />
-				</div>
-			</div>

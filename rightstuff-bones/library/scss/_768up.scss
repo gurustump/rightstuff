@@ -27,13 +27,19 @@ LAYOUT & GRID STYLES
 #container {
 	padding-top:60px;
 	.wrap.banner-wrap {
-		background:url(../images/bg-banner.png) 50% 50% no-repeat;
 		margin:15px auto 30px;
 		.banner {
 			width:728px;
 			margin:0 auto;
-			height:90px;
-			overflow:hidden;
+			.email-collection {
+				h3, p {
+					display:inline;
+					margin-right:5px;
+				}
+				h3 {
+					margin-right:20px;
+				}
+			}
 		}
 	}
 }
@@ -227,6 +233,17 @@ body.home {
 		.featured-pagination {
 			margin-top:0;
 		}
+		.twt {
+			float:left;
+			margin-right:320px;
+			min-height:600px;
+		}
+		.content-secondary {
+			.banner300x600 {
+				float:left;
+				margin-left:-300px;
+			}
+		}
 	}
 }
 body.archive {
@@ -310,11 +327,26 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
+	.posts-list {
+		margin-right:0;
+		& > li {
+			width:auto;
+			margin-right:0;
+			float:none;
+		}
+	}
+}
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {
 	float:left;
 	width:300px;
 	margin-left:-310px;
 	.posts-list {
-		display:block;
+		
 	}
 	.twt {
 		background:none;

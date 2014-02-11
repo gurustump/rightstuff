@@ -248,9 +248,9 @@ figure {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /**
@@ -704,6 +704,13 @@ BUTTONS
   background: #6bc2e0;
 }
 
+.btn-container {
+  display: inline-block;
+}
+.btn-container .btn {
+  display: block;
+}
+
 /*
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -775,13 +782,30 @@ style a page via class
 LAYOUT & GRID STYLES
 *********************/
 #container {
-  padding-top: 45px;
+  padding-top: 55px;
 }
 #container .banner-wrap .banner {
   margin-bottom: 6px;
 }
 #container .banner-wrap .banner > img {
   width: 100%;
+}
+#container .banner-wrap .banner .email-collection {
+  color: #aaa;
+  background: #111;
+  text-align: center;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#container .banner-wrap .banner .email-collection h3, #container .banner-wrap .banner .email-collection p {
+  margin-bottom: 5px;
+}
+#container .banner-wrap .banner .email-collection .btn-container .btn {
+  margin-bottom: -6px;
 }
 
 /*********************
@@ -862,6 +886,8 @@ HEADER STYLES
   left: 0;
   width: 100%;
   z-index: 9998;
+  border-bottom: 3px solid #fff;
+  box-shadow: 0 4px 10px #fff;
 }
 .header .wrap {
   padding: 0 40px 0 5px;
@@ -1021,6 +1047,9 @@ body.home #content .featured-pagination .show-more:hover {
 body.home #content .content-secondary {
   margin-bottom: 20px;
   clear: both;
+}
+body.home #content .content-secondary .twt {
+  margin-bottom: 20px;
 }
 
 body.archive #content {
@@ -1220,6 +1249,12 @@ body.home .featured-posts {
   display: block;
   font-size: 16px;
   margin-bottom: 5px;
+}
+
+.banner300x600 {
+  width: 300px;
+  height: 600px;
+  margin: 0 auto;
 }
 
 /* end .hentry */
@@ -1521,9 +1556,6 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.sidebar .posts-list {
-  display: none;
-}
 .sidebar .twt {
   margin-bottom: 20px;
 }
@@ -1535,6 +1567,7 @@ SIDEBARS & ASIDES
 }
 .sidebar .banner {
   width: 300px;
+  height: 600px;
   margin: 0 auto;
 }
 
@@ -1692,6 +1725,27 @@ tweeners.
 
   /* end .entry-content */
   /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  .sidebar .posts-list {
+    margin-right: -2%;
+    width: 100%;
+  }
+  .sidebar .posts-list:after {
+    content: "";
+    height: 0;
+    display: block;
+    font-size: 0;
+    visibility: 0;
+    clear: both;
+  }
+  .sidebar .posts-list > li {
+    width: 48%;
+    margin-right: 2%;
+    float: left;
+  }
+
+  /*********************
   FOOTER STYLES
   *********************/
   /*
@@ -1826,14 +1880,18 @@ you can add resource intensive styles.
     padding-top: 60px;
   }
   #container .wrap.banner-wrap {
-    background: url(../images/bg-banner.png) 50% 50% no-repeat;
     margin: 15px auto 30px;
   }
   #container .wrap.banner-wrap .banner {
     width: 728px;
     margin: 0 auto;
-    height: 90px;
-    overflow: hidden;
+  }
+  #container .wrap.banner-wrap .banner .email-collection h3, #container .wrap.banner-wrap .banner .email-collection p {
+    display: inline;
+    margin-right: 5px;
+  }
+  #container .wrap.banner-wrap .banner .email-collection h3 {
+    margin-right: 20px;
   }
 
   .wrap {
@@ -1987,6 +2045,15 @@ you can add resource intensive styles.
   body.home #content .featured-pagination {
     margin-top: 0;
   }
+  body.home #content .twt {
+    float: left;
+    margin-right: 320px;
+    min-height: 600px;
+  }
+  body.home #content .content-secondary .banner300x600 {
+    float: left;
+    margin-left: -300px;
+  }
 
   body.archive #content #main {
     width: auto;
@@ -2077,13 +2144,22 @@ you can add resource intensive styles.
   /*********************
   SIDEBARS & ASIDES
   *********************/
+  .sidebar .posts-list {
+    margin-right: 0;
+  }
+  .sidebar .posts-list > li {
+    width: auto;
+    margin-right: 0;
+    float: none;
+  }
+
+  /*********************
+  SIDEBARS & ASIDES
+  *********************/
   .sidebar {
     float: left;
     width: 300px;
     margin-left: -310px;
-  }
-  .sidebar .posts-list {
-    display: block;
   }
   .sidebar .twt {
     background: none;
@@ -2271,6 +2347,33 @@ you can add resource intensive styles.
     transform: rotate(2deg);
   }
 
+  body.home #container .wrap.banner-wrap {
+    margin-top: 5px;
+  }
+  body.home #container .wrap.banner-wrap .banner {
+    width: 100%;
+  }
+  body.home #container .wrap.banner-wrap .banner > *:first-child {
+    width: auto;
+    margin-right: 20px;
+  }
+  body.home #container .wrap.banner-wrap .banner > * {
+    float: left;
+  }
+  body.home #container .wrap.banner-wrap .banner .email-collection {
+    width: 282px;
+  }
+  body.home #container .wrap.banner-wrap .banner .email-collection h3, body.home #container .wrap.banner-wrap .banner .email-collection p {
+    display: block;
+  }
+  body.home #container .wrap.banner-wrap:after {
+    content: "";
+    height: 0;
+    display: block;
+    font-size: 0;
+    visibility: 0;
+    clear: both;
+  }
   body.home #content #main {
     width: auto;
   }
@@ -2286,28 +2389,47 @@ you can add resource intensive styles.
     clear: both;
   }
   body.home #mainTouts > li {
-    width: 481px;
+    width: 478px;
     float: left;
-    border-right: 1px solid #eee;
+    padding-bottom: 0;
+    border: 1px solid #ddd;
+    background: #eee;
+    margin-bottom: 25px;
   }
   body.home #mainTouts > li > a > .img-wrap {
-    width: 300px;
+    width: 294px;
     height: 168px;
+  }
+  body.home #mainTouts > li > a > .img-wrap:before {
+    border-right-color: #eee;
+  }
+  body.home #mainTouts > li > a > .img-wrap:after {
+    border-right-color: #aaa;
+  }
+  body.home #mainTouts > li > a > .img-wrap img {
+    width: 106%;
+    margin-left: -3%;
+    margin-top: -1%;
   }
   body.home #mainTouts > li > a .title-wrap .title {
     font-size: 18px;
   }
+  body.home #mainTouts > li > a:hover .img-wrap img {
+    width: 120%;
+    margin-left: -10%;
+    margin-top: -4%;
+  }
   body.home #mainTouts > li:first-child {
-    background: none;
     width: 528px;
-    height: 367px;
+    height: 346px;
     padding-top: 0;
     margin-right: 20px;
-    border-right: 0;
+    background: #eee;
+    padding-bottom: 15px;
   }
   body.home #mainTouts > li:first-child > a > .img-wrap {
     width: 100%;
-    height: 297px;
+    height: 276px;
     float: none;
   }
   body.home #mainTouts > li:first-child > a > .img-wrap:before {
@@ -2323,9 +2445,10 @@ you can add resource intensive styles.
     bottom: 0;
     top: auto;
     z-index: 2;
+    border-bottom-color: #eee;
   }
   body.home #mainTouts > li:first-child > a > .img-wrap:after {
-    border-color: #cccccc transparent;
+    border-color: #aaaaaa transparent;
     border-style: solid;
     border-width: 0 26px 26px 26px;
     content: "";
@@ -2338,8 +2461,18 @@ you can add resource intensive styles.
     top: auto;
     z-index: 1;
   }
+  body.home #mainTouts > li:first-child > a > .img-wrap img {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+  }
   body.home #mainTouts > li:first-child > a .title-wrap .title {
     font-size: 24px;
+  }
+  body.home #mainTouts > li:first-child > a:hover .img-wrap img {
+    width: 115%;
+    margin-left: -7%;
+    margin-top: -3%;
   }
   body.home .featured-posts > ul {
     margin-right: -20px;

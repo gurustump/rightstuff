@@ -131,6 +131,25 @@ body.home, body.archive {
 } /* end .entry-content */
 
 /*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {
+	.posts-list {
+		margin-right:-2%;
+		width:100%;
+		&:after {
+			@include clearfixer;
+		}
+		& > li {
+			width:48%;
+			margin-right:2%;
+			float:left;
+		}
+	}
+}
+
+/*********************
 FOOTER STYLES
 *********************/
 	

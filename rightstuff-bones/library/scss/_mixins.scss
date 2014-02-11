@@ -60,6 +60,7 @@ $bones-blue:          #1990db;
 $base-color:          #333;
 $rs-pink:             #cc3366;
 $rs-blue:             #66a5a5;
+$rs-yellow:           #fc0;
 $twt-color:           #6c0c16;
 $fb-blue:             #305891;
 $twit-blue:           #2ca8d2;
@@ -296,6 +297,12 @@ BUTTONS
 	background:$twit-blue;
 	&:hover {
 		background:lighten($twit-blue, 15%);
+	}
+}
+.btn-container {
+	display:inline-block;
+	.btn {
+		display:block;
 	}
 }
 
