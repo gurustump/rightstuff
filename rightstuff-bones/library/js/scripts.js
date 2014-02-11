@@ -77,16 +77,17 @@ jQuery(document).ready(function($) {
 					activator.fadeOut();
 				}
 				$.each(data.posts, function(i,post) {
-					console.log(post)
+					var imageUrl = post.thumbnail_images && post.thumbnail_images.full?post.thumbnail_images.full.url:post.attachments[0] && post.attachments[0].images?post.attachments[0].images.full.url:''
+					var postExcerpt = post.excerpt.replace(/<[^>]+>/ig,'')
+					/*console.log(post)
 					console.log(post.thumbnail_images)
-					console.log(post.thumbnail_images.full?post.thumbnail_images.full:'full undefined')
-					console.log(post.thumbnail_images.full && post.thumbnail_images.full.url?post.thumbnail_images.full.url:'full url undefined')
+					console.log(post.thumbnail_images && post.thumbnail_images.full?post.thumbnail_images.full:'full undefined')*/
 					$('<li class="featured_'+(i+featuredOffset)+'">'+
 						'<a href="'+post.url+'">'+
-							'<img src="'+(post.thumbnail_images && post.thumbnail_images.full > 0?post.thumbnail_images.full.url:post.attachments[0].images.full.url)+'" alt="'+post.title+'" />'+
+							'<img src="'+imageUrl+'" alt="'+post.title+'" />'+
 							'<span class="title-wrap">'+
 								'<span class="title">'+post.title+'</span>'+
-								'<span class="excerpt">'+post.excerpt+'</span>'+
+								'<span class="excerpt">'+postExcerpt+'</span>'+
 							'</span>'+
 						'</a>'+
 					'</li>').appendTo('.FEATURED_POSTS')
@@ -99,7 +100,6 @@ jQuery(document).ready(function($) {
 	$('.nav-activator').click(function(e) {
 		e.preventDefault()
 		$(this).siblings('.NAV_WRAP').slideToggle(400,function() {
-			console.log($(this))
 			$(this).children('nav').css('position','absolute').attr('style','')
 		})
 	})
