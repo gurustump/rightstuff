@@ -84,7 +84,9 @@ jQuery(document).ready(function($) {
 					console.log(post.thumbnail_images && post.thumbnail_images.full?post.thumbnail_images.full:'full undefined')*/
 					$('<li class="featured_'+(i+featuredOffset)+'">'+
 						'<a href="'+post.url+'">'+
-							'<img src="'+imageUrl+'" alt="'+post.title+'" />'+
+							'<span class="img-wrap">'+
+								'<img src="'+imageUrl+'" alt="'+post.title+'" />'+
+							'</span>'+
 							'<span class="title-wrap">'+
 								'<span class="title">'+post.title+'</span>'+
 								'<span class="excerpt">'+postExcerpt+'</span>'+
