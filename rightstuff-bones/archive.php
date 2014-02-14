@@ -48,6 +48,7 @@
 							$randomNum = $imageCount > 1 ? rand(0, $imageCount-1) : 0;
 							$imageArray = get_post_meta(get_the_ID(),'right_stuff_test_image');
 							$image = $imageCount > 0 ? wp_get_attachment_image($imageArray[$randomNum], 'tout-thumb-528') : get_the_post_thumbnail(get_the_ID(),'tout-thumb-528');
+							add_filter( 'excerpt_more', 'rs_noLink_excerpt_more' );
 							?>
 							<li>
 								<a href="<?php the_permalink(); ?>">

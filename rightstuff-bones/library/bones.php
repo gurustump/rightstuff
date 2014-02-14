@@ -349,6 +349,11 @@ function bones_excerpt_more($more) {
 	// edit here if you like
 	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'bonestheme' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'bonestheme' ) .'</a>';
 }
+function rs_noLink_excerpt_more($more) {
+	global $post;
+	// edit here if you like
+	return '...  <span>'. __( 'Read more &raquo;', 'bonestheme' ) .'</span>';
+}
 
 /*
  * This is a modified the_author_posts_link() which just returns the link.

@@ -760,11 +760,31 @@ body.home #mainTouts > li > a > .img-wrap:after, body.home .featured-posts > ul 
   z-index: 1;
 }
 body.home #mainTouts > li > a > .img-wrap img, body.home .featured-posts > ul > li > a > .img-wrap img {
-  -webkit-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
-  -moz-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
-  -ms-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
-  -o-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
-  transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
 }
 body.home #mainTouts > li > a .title-wrap, body.home .featured-posts > ul > li > a .title-wrap {
   padding-top: 0;
@@ -957,11 +977,31 @@ body.archive #content #main .posts-list > li > a > .img-wrap:after {
   z-index: 1;
 }
 body.archive #content #main .posts-list > li > a > .img-wrap img {
-  -webkit-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
-  -moz-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
-  -ms-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
-  -o-transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
-  transition: opacity 0.5s, height 0.75s, width 0.75s, margin-left 0.75s, margin-top 0.75s, transform 1s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
 }
 body.archive #content #main .posts-list > li > a .title-wrap {
   padding-top: 0;

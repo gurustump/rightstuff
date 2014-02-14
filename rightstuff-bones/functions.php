@@ -52,6 +52,7 @@ add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 add_image_size( 'tout-thumb-528', 528, 297, true );
 add_image_size( 'sidebar-thumb-300', 300, 200, true );
+add_image_size( 'share-1200', 1200, 675, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -204,4 +205,14 @@ add_filter('excerpt_length', 'rs_excerpt_length');
 
 // Meta Box setup (works only with plugin)
 include 'includes/meta-box.php';
+/*
+add_filter('language_attributes', 'add_og_xml_ns');
+function add_og_xml_ns($content) {
+	return ' xmlns:og="http://ogp.me/ns#" ' . $content;
+}
+add_filter('language_attributes', 'add_fb_xml_ns');
+function add_fb_xml_ns($content) {
+	return ' xmlns:fb="https://www.facebook.com/2008/fbml" ' . $content;
+}
+*/
 ?>

@@ -283,7 +283,9 @@ body.home #mainTouts, body.home .featured-posts > ul {
 					@include triangle-left($color:#ccc,$border:26px,$offset:-1px,$z:1);
 				}
 				img {
-					@include transition(opacity .5s,height .75s,width .75s,margin-left .75s,margin-top .75s,transform 1s)
+					@each $prefix in $prefixes {
+						@include transition(opacity 1s,height 1.5s,width 1.5s,margin-left 1.5s,margin-top 1.5s,#{$prefix}transform 2s)
+					}
 				}
 			}
 			.title-wrap {
