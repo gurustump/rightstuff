@@ -153,13 +153,20 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 	
-/*
-check your menus here. do they look good?
-do they need tweaking?
-*/
-.footer-links {
-	ul {
-		li {}
+.footer {
+	.wrap {
+		nav {
+			.nav {
+				height:60px;
+				line-height:60px;
+				& > li {
+					display:inline-block;
+					& > a {
+						padding:0 5px;
+						border-bottom:0;
+					}
+				}
+			}
+		}
 	}
-} /* end .footer-links */
-			
+}

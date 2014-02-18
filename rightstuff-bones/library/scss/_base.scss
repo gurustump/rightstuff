@@ -70,23 +70,12 @@ LAYOUT & GRID STYLES
 	padding-top:55px;
 	.banner-wrap {
 		.banner {
-			margin-bottom:6px;
-			& > img {
-				width:100%;
-			}
-			.email-collection {
-				color:#aaa;
-				background:#111;
-				text-align:center;
-				padding:10px;
-				@include box-sizing;
-				h3, p {
-					margin-bottom:5px;
-				}
-				.btn-container {
-					.btn {
-						margin-bottom:-6px;
-					}
+			margin-bottom:25px;
+			.banner-inner {
+				margin-bottom:15px;
+				&  * {
+					width:100%;
+					height:auto;
 				}
 			}
 		}
@@ -169,6 +158,14 @@ h5, .h5 {
 	line-height: 2.09em;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+}
+strong {
+	&.title {
+		font-weight:normal;
+		font-size:16px;
+		font-family:Oswald;
+		color:$rs-blue;
+	}
 }
 
 /*********************
@@ -388,6 +385,11 @@ body.archive {
 		}
 	}
 }
+body.single {
+	#main {
+		margin-bottom:25px;
+	}
+}
 body.home #mainTouts, body.home .featured-posts > ul, .posts-list {
 	& > li {
 		margin-bottom:15px;
@@ -517,6 +519,18 @@ body.home .featured-posts {
 			}
 			.post-secondary-wrap {
 				padding-top:25px;
+			}
+		}
+		.tags {
+			a {
+				color:$rs-pink;
+				text-decoration:none;
+				font-size:16px;
+				font-weight:300;
+				font-family:Oswald;
+				&:hover {
+					text-decoration:underline;
+				}
 			}
 		}
 	}
@@ -1039,6 +1053,28 @@ COMMENT FORM STYLES
 	}
 
 /*********************
+EMAIL FORM STYLES
+*********************/
+.email-collection {
+	color:#aaa;
+	background:#111;
+	text-align:center;
+	padding:10px;
+	@include box-sizing;
+	h3, p {
+		margin-bottom:5px;
+	}
+	div {
+		display:inline;
+	}
+	.btn-container {
+		.btn {
+			margin-bottom:-6px;
+		}
+	}
+}
+
+/*********************
 SIDEBARS & ASIDES
 *********************/
 
@@ -1092,7 +1128,74 @@ FOOTER STYLES
 
 .footer {
 	clear:both;
-	padding:0 15px;
+	background:#555;
+	border-bottom:40px solid #111;
+	color:#555;
+	font-family:Oswald;
+	text-transform:uppercase;
+	text-align:center;
+	a, a:hover {
+		color:#fff;
+	}
+	.wrap {
+		position:relative;
+		nav {
+			.social-links {
+				width:320px;
+				margin:0 auto 10px;
+				& > li {
+					float:left;
+					& > a {
+						display:block;
+						width:60px;
+						height:60px;
+						text-indent:-9999px;
+						background:#bbb url(../images/ic-sprite.png) no-repeat 0 -320px;
+						margin-left:5px;
+					}
+					&.tw > a {
+						background-position:0 -405px;
+					}
+					&.pin > a {
+						background-position:0 -486px;
+					}
+					&.goo > a {
+						background-position:0 -564px;
+					}
+					&.yt > a {
+						background-position:0 -643px;
+					}
+					&:first-child > a {
+						margin-left:0;
+					}
+				}
+				&:after {
+					@include clearfixer;
+				}
+			}
+			.nav {
+				background:none;
+				font-size:18px;
+				border-top:1px solid #222;
+				& > li {
+					& > a {
+						background:none;
+					}
+				}
+			}
+		}
+		.copyright {
+			position:absolute;
+			left:0;
+			bottom:-40px;
+			height:40px;
+			line-height:40px;
+			font-size:13px;
+			margin-bottom:0;
+			width:100%;
+			text-align:center;
+		}
+	}
 }
 
 	/*

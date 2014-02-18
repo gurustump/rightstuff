@@ -31,6 +31,6 @@
 					<?php } } ?>
 					</ul>
 					<div class="banner">
-						<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/banners/Ad300x250.jpg" alt="ad" />
+						<?php ad_placement('ad_300x250'); ?>
 					</div>
 				</div>

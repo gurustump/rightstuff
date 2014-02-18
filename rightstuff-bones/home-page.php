@@ -38,20 +38,10 @@ Template Name: Home Page
 						</ul>
 						<div class="wrap banner-wrap">
 							<div class="banner">
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/banners/C011_FII_SitCash_InvestOut_Article_728x90_0511_001.gif" alt="ad" />
-								<div class="email-collection">
-									<form method="POST" action="http://www.rightstuffdaily.com/sendy/subscribe">
-										<fieldset>
-											<h3>Want more of the Right Stuff?</h3>
-											<p>Put your e-mail in the box</p>
-											<input id="sendy_email" type="text" placeholder="E-mail Address" name="email" />
-											<input type="hidden" value="Y763rhFDawWba4FV0FGVVYqA" name="list" />
-											<span class="btn-container">
-												<button class="btn" type="submit">Sign Up</button>
-											</span>
-										</fieldset>
-									</form>
+								<div class="banner-inner">
+									<?php ad_placement('ad_720x90'); ?>
 								</div>
+								<?php include 'includes/email-collection.php'; ?>
 							</div>
 						</div>
 						<div class="featured-posts">
@@ -93,7 +83,7 @@ Template Name: Home Page
 					<div class="content-secondary">
 						<?php include 'includes/twt-articles.php'; ?>
 						<div class="banner banner300x600">
-							<div style="width:100%;height:100%;background:#ccc;">banner ad placeholder</div>
+							<?php ad_placement('ad_300x600'); ?>
 						</div>
 					</div>
 				</div>

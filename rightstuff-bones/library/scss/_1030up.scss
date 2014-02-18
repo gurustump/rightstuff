@@ -15,6 +15,27 @@ be seen on the Desktop.
 		margin:0 auto;
 		padding:0;
 	}
+	.wrap.banner-wrap {
+		.banner {
+			.banner-inner {
+				margin-bottom:0;
+			}
+			.email-collection {
+				@include box-sizing;
+				height:90px;
+				h3, p {
+					display:block;
+					margin-right:0;
+				}
+				h3 {
+					float:none;
+				}
+				div {
+					float:none;
+				}
+			}
+		}
+	}
 }
 #main {
 	width:700px;
@@ -243,6 +264,41 @@ body.home {
 				}
 			}
 		
+		}
+	}
+}
+.email-collection {
+	p {
+		display:inline;
+		margin-right:5px;
+	}
+	h3 {
+		float:left;
+	}
+	div {
+		float:right;
+	}
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {
+	.wrap {
+		nav {
+			.social-links {
+				margin-right:20px;
+			}
+			.nav {
+				font-size:22px;
+				& > li > a {
+					margin-right:10px;
+				}
+			}
+		}
+		.copyright {
+			margin-left:0;
 		}
 	}
 }

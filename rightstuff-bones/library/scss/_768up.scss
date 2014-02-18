@@ -32,12 +32,15 @@ LAYOUT & GRID STYLES
 			width:728px;
 			margin:0 auto;
 			.email-collection {
-				h3, p {
+				p {
 					display:inline;
 					margin-right:5px;
 				}
 				h3 {
-					margin-right:20px;
+					float:left;
+				}
+				div {
+					float:right;
 				}
 			}
 		}
@@ -323,18 +326,29 @@ body.home #mainTouts {
 		}
 	}
 }
-
-/*********************
-SIDEBARS & ASIDES
-*********************/
-
-.sidebar {
-	.posts-list {
-		margin-right:0;
-		& > li {
-			width:auto;
-			margin-right:0;
-			float:none;
+.posts-list {
+	& > li {
+		& > a {
+			& > .img-wrap {
+				width:auto;
+				height:200px;
+				img {
+					@each $prefix in $prefixes {
+						@include transition(opacity 1s,height 1.5s,width 1.5s,margin-left 1.5s,margin-top 1.5s,#{$prefix}transform 2s)
+					}
+				}
+			}
+			&:hover {
+				& > .img-wrap {
+					& > img {
+						opacity:.7;
+						width:114%;
+						margin-left:-7%;
+						margin-top:-3%;
+						@include transform(rotate(2deg));
+					}
+				}
+			}
 		}
 	}
 }
@@ -348,7 +362,12 @@ SIDEBARS & ASIDES
 	width:300px;
 	margin-left:-310px;
 	.posts-list {
-		
+		margin-right:0;
+		& > li {
+			width:auto;
+			margin-right:0;
+			float:none;
+		}
 	}
 	.twt {
 		background:none;
@@ -487,24 +506,32 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 
-/*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
-*/
-.footer-links {
-	ul {
-		li {
-			a {
-				&:hover {}
+.footer {
+	text-align:left;
+	.wrap {
+		nav {
+			height:60px;
+			line-height:60px;
+			padding:20px 0;
+			.social-links {
+				margin:0 10px 0 0;
+				float:left;
+				& > li {
+					& > a:hover {
+						background-color:#999;
+					}
+				}
 			}
-			/*
-			be careful with the depth of your menus.
-			it's very rare to have multi-depth menus in
-			the footer.
-			*/
-			ul {}
+			.nav {
+				border-top:0;
+				& > li > a {
+					margin-right:5px;
+				}
+			}
+		}
+		.copyright {
+			text-align:left;
+			margin-left:10px;
 		}
 	}
-} /* end .footer-links */
-
+}

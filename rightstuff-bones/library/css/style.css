@@ -785,27 +785,14 @@ LAYOUT & GRID STYLES
   padding-top: 55px;
 }
 #container .banner-wrap .banner {
-  margin-bottom: 6px;
+  margin-bottom: 25px;
 }
-#container .banner-wrap .banner > img {
+#container .banner-wrap .banner .banner-inner {
+  margin-bottom: 15px;
+}
+#container .banner-wrap .banner .banner-inner * {
   width: 100%;
-}
-#container .banner-wrap .banner .email-collection {
-  color: #aaa;
-  background: #111;
-  text-align: center;
-  padding: 10px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
-#container .banner-wrap .banner .email-collection h3, #container .banner-wrap .banner .email-collection p {
-  margin-bottom: 5px;
-}
-#container .banner-wrap .banner .email-collection .btn-container .btn {
-  margin-bottom: -6px;
+  height: auto;
 }
 
 /*********************
@@ -872,6 +859,13 @@ h5, .h5 {
   line-height: 2.09em;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+strong.title {
+  font-weight: normal;
+  font-size: 16px;
+  font-family: Oswald;
+  color: #66a5a5;
 }
 
 /*********************
@@ -1065,6 +1059,10 @@ body.archive #content h1 {
   margin-bottom: 25px;
 }
 
+body.single #main {
+  margin-bottom: 25px;
+}
+
 body.home #mainTouts > li, body.home .featured-posts > ul > li, .posts-list > li {
   margin-bottom: 15px;
 }
@@ -1218,6 +1216,16 @@ body.home .featured-posts {
 }
 #main article .section-secondary .post-secondary-wrap {
   padding-top: 25px;
+}
+#main article .tags a {
+  color: #cc3366;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: Oswald;
+}
+#main article .tags a:hover {
+  text-decoration: underline;
 }
 
 .twt {
@@ -1554,6 +1562,30 @@ COMMENT FORM STYLES
 }
 
 /*********************
+EMAIL FORM STYLES
+*********************/
+.email-collection {
+  color: #aaa;
+  background: #111;
+  text-align: center;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.email-collection h3, .email-collection p {
+  margin-bottom: 5px;
+}
+.email-collection div {
+  display: inline;
+}
+.email-collection .btn-container .btn {
+  margin-bottom: -6px;
+}
+
+/*********************
 SIDEBARS & ASIDES
 *********************/
 .sidebar .twt {
@@ -1580,7 +1612,75 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  padding: 0 15px;
+  background: #555;
+  border-bottom: 40px solid #111;
+  color: #555;
+  font-family: Oswald;
+  text-transform: uppercase;
+  text-align: center;
+}
+.footer a, .footer a:hover {
+  color: #fff;
+}
+.footer .wrap {
+  position: relative;
+}
+.footer .wrap nav .social-links {
+  width: 320px;
+  margin: 0 auto 10px;
+}
+.footer .wrap nav .social-links > li {
+  float: left;
+}
+.footer .wrap nav .social-links > li > a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-indent: -9999px;
+  background: #bbbbbb url(../images/ic-sprite.png) no-repeat 0 -320px;
+  margin-left: 5px;
+}
+.footer .wrap nav .social-links > li.tw > a {
+  background-position: 0 -405px;
+}
+.footer .wrap nav .social-links > li.pin > a {
+  background-position: 0 -486px;
+}
+.footer .wrap nav .social-links > li.goo > a {
+  background-position: 0 -564px;
+}
+.footer .wrap nav .social-links > li.yt > a {
+  background-position: 0 -643px;
+}
+.footer .wrap nav .social-links > li:first-child > a {
+  margin-left: 0;
+}
+.footer .wrap nav .social-links:after {
+  content: "";
+  height: 0;
+  display: block;
+  font-size: 0;
+  visibility: 0;
+  clear: both;
+}
+.footer .wrap nav .nav {
+  background: none;
+  font-size: 18px;
+  border-top: 1px solid #222;
+}
+.footer .wrap nav .nav > li > a {
+  background: none;
+}
+.footer .wrap .copyright {
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 13px;
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 /*
@@ -1748,11 +1848,17 @@ tweeners.
   /*********************
   FOOTER STYLES
   *********************/
-  /*
-  check your menus here. do they look good?
-  do they need tweaking?
-  */
-  /* end .footer-links */
+  .footer .wrap nav .nav {
+    height: 60px;
+    line-height: 60px;
+  }
+  .footer .wrap nav .nav > li {
+    display: inline-block;
+  }
+  .footer .wrap nav .nav > li > a {
+    padding: 0 5px;
+    border-bottom: 0;
+  }
 }
 /*
 TABLET & SMALLER LAPTOPS
@@ -1886,12 +1992,15 @@ you can add resource intensive styles.
     width: 728px;
     margin: 0 auto;
   }
-  #container .wrap.banner-wrap .banner .email-collection h3, #container .wrap.banner-wrap .banner .email-collection p {
+  #container .wrap.banner-wrap .banner .email-collection p {
     display: inline;
     margin-right: 5px;
   }
   #container .wrap.banner-wrap .banner .email-collection h3 {
-    margin-right: 20px;
+    float: left;
+  }
+  #container .wrap.banner-wrap .banner .email-collection div {
+    float: right;
   }
 
   .wrap {
@@ -2161,16 +2270,47 @@ you can add resource intensive styles.
     border-color: transparent #444;
   }
 
-  /*********************
-  SIDEBARS & ASIDES
-  *********************/
-  .sidebar .posts-list {
-    margin-right: 0;
-  }
-  .sidebar .posts-list > li {
+  .posts-list > li > a > .img-wrap {
     width: auto;
-    margin-right: 0;
-    float: none;
+    height: 200px;
+  }
+  .posts-list > li > a > .img-wrap img {
+    -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+    -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+    -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+    -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+    transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+    -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+    -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+    -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+    -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+    transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+    -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+    -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+    -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+    -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+    transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+    -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+    -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+    -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+    -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+    transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+    -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+    -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+    -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+    -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+    transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  }
+  .posts-list > li > a:hover > .img-wrap > img {
+    opacity: .7;
+    width: 114%;
+    margin-left: -7%;
+    margin-top: -3%;
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    transform: rotate(2deg);
   }
 
   /*********************
@@ -2180,6 +2320,14 @@ you can add resource intensive styles.
     float: left;
     width: 300px;
     margin-left: -310px;
+  }
+  .sidebar .posts-list {
+    margin-right: 0;
+  }
+  .sidebar .posts-list > li {
+    width: auto;
+    margin-right: 0;
+    float: none;
   }
   .sidebar .twt {
     background: none;
@@ -2230,20 +2378,31 @@ you can add resource intensive styles.
   /*********************
   FOOTER STYLES
   *********************/
-  /*
-  you'll probably need to do quite a bit
-  of overriding here if you styled them for
-  mobile. Make sure to double check these!
-  */
-  .footer-links ul li {
-    /*
-    be careful with the depth of your menus.
-    it's very rare to have multi-depth menus in
-    the footer.
-    */
+  .footer {
+    text-align: left;
   }
-
-  /* end .footer-links */
+  .footer .wrap nav {
+    height: 60px;
+    line-height: 60px;
+    padding: 20px 0;
+  }
+  .footer .wrap nav .social-links {
+    margin: 0 10px 0 0;
+    float: left;
+  }
+  .footer .wrap nav .social-links > li > a:hover {
+    background-color: #999;
+  }
+  .footer .wrap nav .nav {
+    border-top: 0;
+  }
+  .footer .wrap nav .nav > li > a {
+    margin-right: 5px;
+  }
+  .footer .wrap .copyright {
+    text-align: left;
+    margin-left: 10px;
+  }
 }
 /*
 SMALLER LAPTOPS
@@ -2278,6 +2437,27 @@ you can add resource intensive styles.
     width: 1030px;
     margin: 0 auto;
     padding: 0;
+  }
+  #container .wrap.banner-wrap .banner .banner-inner {
+    margin-bottom: 0;
+  }
+  #container .wrap.banner-wrap .banner .email-collection {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 90px;
+  }
+  #container .wrap.banner-wrap .banner .email-collection h3, #container .wrap.banner-wrap .banner .email-collection p {
+    display: block;
+    margin-right: 0;
+  }
+  #container .wrap.banner-wrap .banner .email-collection h3 {
+    float: none;
+  }
+  #container .wrap.banner-wrap .banner .email-collection div {
+    float: none;
   }
 
   #main {
@@ -2561,6 +2741,33 @@ you can add resource intensive styles.
 
   #main article .section-secondary .addthis_toolbox .btn-fb, #main article .section-secondary .addthis_toolbox .btn-twit {
     font-size: 28px;
+  }
+
+  .email-collection p {
+    display: inline;
+    margin-right: 5px;
+  }
+  .email-collection h3 {
+    float: left;
+  }
+  .email-collection div {
+    float: right;
+  }
+
+  /*********************
+  FOOTER STYLES
+  *********************/
+  .footer .wrap nav .social-links {
+    margin-right: 20px;
+  }
+  .footer .wrap nav .nav {
+    font-size: 22px;
+  }
+  .footer .wrap nav .nav > li > a {
+    margin-right: 10px;
+  }
+  .footer .wrap .copyright {
+    margin-left: 0;
   }
 }
 /*

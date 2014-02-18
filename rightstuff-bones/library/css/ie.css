@@ -503,11 +503,18 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/*
-check your menus here. do they look good?
-do they need tweaking?
-*/
-/* end .footer-links */
+.footer .wrap nav .nav {
+  height: 60px;
+  line-height: 60px;
+}
+.footer .wrap nav .nav > li {
+  display: inline-block;
+}
+.footer .wrap nav .nav > li > a {
+  padding: 0 5px;
+  border-bottom: 0;
+}
+
 /******************************************************************
 Site Name:
 Author:
@@ -537,12 +544,15 @@ LAYOUT & GRID STYLES
   width: 728px;
   margin: 0 auto;
 }
-#container .wrap.banner-wrap .banner .email-collection h3, #container .wrap.banner-wrap .banner .email-collection p {
+#container .wrap.banner-wrap .banner .email-collection p {
   display: inline;
   margin-right: 5px;
 }
 #container .wrap.banner-wrap .banner .email-collection h3 {
-  margin-right: 20px;
+  float: left;
+}
+#container .wrap.banner-wrap .banner .email-collection div {
+  float: right;
 }
 
 .wrap {
@@ -812,16 +822,47 @@ body.home #mainTouts > li:first-child > a > .img-wrap:after {
   border-color: transparent #444;
 }
 
-/*********************
-SIDEBARS & ASIDES
-*********************/
-.sidebar .posts-list {
-  margin-right: 0;
-}
-.sidebar .posts-list > li {
+.posts-list > li > a > .img-wrap {
   width: auto;
-  margin-right: 0;
-  float: none;
+  height: 200px;
+}
+.posts-list > li > a > .img-wrap img {
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -moz-transform 2s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -ms-transform 2s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -o-transform 2s;
+  -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  -moz-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  -ms-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  -o-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+  transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, transform 2s;
+}
+.posts-list > li > a:hover > .img-wrap > img {
+  opacity: .7;
+  width: 114%;
+  margin-left: -7%;
+  margin-top: -3%;
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  transform: rotate(2deg);
 }
 
 /*********************
@@ -831,6 +872,14 @@ SIDEBARS & ASIDES
   float: left;
   width: 300px;
   margin-left: -310px;
+}
+.sidebar .posts-list {
+  margin-right: 0;
+}
+.sidebar .posts-list > li {
+  width: auto;
+  margin-right: 0;
+  float: none;
 }
 .sidebar .twt {
   background: none;
@@ -881,20 +930,32 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
-*/
-.footer-links ul li {
-  /*
-  be careful with the depth of your menus.
-  it's very rare to have multi-depth menus in
-  the footer.
-  */
+.footer {
+  text-align: left;
+}
+.footer .wrap nav {
+  height: 60px;
+  line-height: 60px;
+  padding: 20px 0;
+}
+.footer .wrap nav .social-links {
+  margin: 0 10px 0 0;
+  float: left;
+}
+.footer .wrap nav .social-links > li > a:hover {
+  background-color: #999;
+}
+.footer .wrap nav .nav {
+  border-top: 0;
+}
+.footer .wrap nav .nav > li > a {
+  margin-right: 5px;
+}
+.footer .wrap .copyright {
+  text-align: left;
+  margin-left: 10px;
 }
 
-/* end .footer-links */
 /******************************************************************
 Site Name: 
 Author: 
@@ -909,6 +970,27 @@ be seen on the Desktop.
   width: 1030px;
   margin: 0 auto;
   padding: 0;
+}
+#container .wrap.banner-wrap .banner .banner-inner {
+  margin-bottom: 0;
+}
+#container .wrap.banner-wrap .banner .email-collection {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 90px;
+}
+#container .wrap.banner-wrap .banner .email-collection h3, #container .wrap.banner-wrap .banner .email-collection p {
+  display: block;
+  margin-right: 0;
+}
+#container .wrap.banner-wrap .banner .email-collection h3 {
+  float: none;
+}
+#container .wrap.banner-wrap .banner .email-collection div {
+  float: none;
 }
 
 #main {
@@ -1192,6 +1274,33 @@ body.home .featured-posts > ul > li > a .title-wrap {
 
 #main article .section-secondary .addthis_toolbox .btn-fb, #main article .section-secondary .addthis_toolbox .btn-twit {
   font-size: 28px;
+}
+
+.email-collection p {
+  display: inline;
+  margin-right: 5px;
+}
+.email-collection h3 {
+  float: left;
+}
+.email-collection div {
+  float: right;
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+.footer .wrap nav .social-links {
+  margin-right: 20px;
+}
+.footer .wrap nav .nav {
+  font-size: 22px;
+}
+.footer .wrap nav .nav > li > a {
+  margin-right: 10px;
+}
+.footer .wrap .copyright {
+  margin-left: 0;
 }
 
 /* 

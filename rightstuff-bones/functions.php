@@ -205,6 +205,22 @@ add_filter('excerpt_length', 'rs_excerpt_length');
 
 // Meta Box setup (works only with plugin)
 include 'includes/meta-box.php';
+
+// ad placement function
+function ad_placement($slug) {
+	$ad_args = array(
+		'numberposts'	=> 1,
+		'post_type'		=> 'module',
+		'name'		=> $slug
+	);
+	$ads = get_posts($ad_args);
+	if ( isset($ads[0]) ) { 
+		foreach($ads as $key => $ad) { 
+			echo $ad->post_content;
+		}
+	}
+
+}
 /*
 add_filter('language_attributes', 'add_og_xml_ns');
 function add_og_xml_ns($content) {
