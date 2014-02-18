@@ -5,7 +5,7 @@
 					<ul class="posts-list">
 					<?php 
 					$featured_args = array(
-						'numberposts'		=> 3,
+						'numberposts'		=> 10,
 						'category_name'		=> 'sidebar',
 						'order'				=> 'ASC',
 						'orderby'			=> 'meta_value',

@@ -2078,6 +2078,7 @@ you can add resource intensive styles.
     height: 45px;
     margin: -10px 0;
     padding: 0;
+    cursor: pointer;
   }
   .header .wrap .nav-wrap .search-form {
     padding: 0 10px;
