@@ -39,7 +39,7 @@ Template Name: Home Page
 						<div class="wrap banner-wrap">
 							<div class="banner">
 								<div class="banner-inner">
-									<?php ad_placement('ad_720x90'); ?>
+									<?php ad_placement('ad_728x90'); ?>
 								</div>
 								<?php include 'includes/email-collection.php'; ?>
 							</div>

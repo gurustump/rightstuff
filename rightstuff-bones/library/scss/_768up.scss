@@ -17,7 +17,9 @@ come into play. Have fun!
 GENERAL STYLES
 *********************/
 
-body {}
+html, body {
+	height:100%;
+}
 
 
 /*********************
@@ -26,6 +28,9 @@ LAYOUT & GRID STYLES
 
 #container {
 	padding-top:60px;
+	margin-bottom:-1px;
+	height:100%;
+	@include box-sizing;
 	.wrap.banner-wrap {
 		margin:15px auto 30px;
 		.banner {
@@ -45,6 +50,10 @@ LAYOUT & GRID STYLES
 			}
 		}
 	}
+	#content {
+		min-height:100%;
+		margin-bottom:-160px;
+	}
 }
 .wrap {
 	max-width: 1140px;
@@ -54,6 +63,7 @@ LAYOUT & GRID STYLES
 	float:left;
 	margin-right:330px;
 	width:auto;
+	margin-bottom:20px;
 }
 
 /*********************
@@ -105,7 +115,7 @@ HEADER STYLES
 			.search-show {
 				display:block;
 				float:right;
-				background:transparent url(../images/ic-sprite.png) no-repeat 50% -111px;
+				background:transparent url(../images/ic-sprite.png) no-repeat 10px -111px;
 				text-indent:-9999px;
 				width:45px;
 				height:45px;
@@ -361,6 +371,7 @@ SIDEBARS & ASIDES
 	float:left;
 	width:300px;
 	margin-left:-310px;
+	margin-bottom:20px;
 	.posts-list {
 		margin-right:0;
 		& > li {
@@ -508,6 +519,7 @@ FOOTER STYLES
 
 .footer {
 	text-align:left;
+	margin-top:20px;
 	.wrap {
 		nav {
 			height:60px;

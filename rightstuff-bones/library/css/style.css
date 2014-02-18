@@ -1599,7 +1599,6 @@ SIDEBARS & ASIDES
 }
 .sidebar .banner {
   width: 300px;
-  height: 600px;
   margin: 0 auto;
 }
 
@@ -1979,11 +1978,22 @@ you can add resource intensive styles.
   /*********************
   GENERAL STYLES
   *********************/
+  html, body {
+    height: 100%;
+  }
+
   /*********************
   LAYOUT & GRID STYLES
   *********************/
   #container {
     padding-top: 60px;
+    margin-bottom: -1px;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
   }
   #container .wrap.banner-wrap {
     margin: 15px auto 30px;
@@ -2002,6 +2012,10 @@ you can add resource intensive styles.
   #container .wrap.banner-wrap .banner .email-collection div {
     float: right;
   }
+  #container #content {
+    min-height: 100%;
+    margin-bottom: -160px;
+  }
 
   .wrap {
     max-width: 1140px;
@@ -2012,6 +2026,7 @@ you can add resource intensive styles.
     float: left;
     margin-right: 330px;
     width: auto;
+    margin-bottom: 20px;
   }
 
   /*********************
@@ -2057,7 +2072,7 @@ you can add resource intensive styles.
   .header .wrap .nav-wrap .search-show {
     display: block;
     float: right;
-    background: transparent url(../images/ic-sprite.png) no-repeat 50% -111px;
+    background: transparent url(../images/ic-sprite.png) no-repeat 10px -111px;
     text-indent: -9999px;
     width: 45px;
     height: 45px;
@@ -2320,6 +2335,7 @@ you can add resource intensive styles.
     float: left;
     width: 300px;
     margin-left: -310px;
+    margin-bottom: 20px;
   }
   .sidebar .posts-list {
     margin-right: 0;
@@ -2380,6 +2396,7 @@ you can add resource intensive styles.
   *********************/
   .footer {
     text-align: left;
+    margin-top: 20px;
   }
   .footer .wrap nav {
     height: 60px;
@@ -2472,7 +2489,7 @@ you can add resource intensive styles.
   #sidebar {
     float: left;
     width: 300px;
-    margin: 0;
+    margin-left: 0;
   }
 
   body.home #mainTouts > li, body.home .featured-posts > ul > li, .posts-list > li {
