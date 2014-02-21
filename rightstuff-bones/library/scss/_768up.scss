@@ -65,7 +65,9 @@ LAYOUT & GRID STYLES
 	float:left;
 	margin-right:330px;
 	width:auto;
-	margin-bottom:20px;
+}
+body.single #main, #main {
+	margin-bottom:0;
 }
 
 /*********************
@@ -249,12 +251,17 @@ body.home {
 		.featured-pagination {
 			margin-top:0;
 		}
-		.twt {
-			float:left;
-			margin-right:320px;
-			min-height:600px;
-		}
 		.content-secondary {
+			&:after {
+				@include clearfixer;
+			}
+			margin-bottom:0;
+			.twt {
+				float:left;
+				margin-right:320px;
+				min-height:600px;
+				margin-bottom:0;
+			}
 			.banner300x600 {
 				float:left;
 				margin-left:-300px;
@@ -374,7 +381,6 @@ SIDEBARS & ASIDES
 	float:left;
 	width:300px;
 	margin-left:-310px;
-	margin-bottom:20px;
 	.posts-list {
 		margin-right:0;
 		& > li {

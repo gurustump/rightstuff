@@ -2044,7 +2044,10 @@ you can add resource intensive styles.
     float: left;
     margin-right: 330px;
     width: auto;
-    margin-bottom: 20px;
+  }
+
+  body.single #main, #main {
+    margin-bottom: 0;
   }
 
   /*********************
@@ -2188,10 +2191,22 @@ you can add resource intensive styles.
   body.home #content .featured-pagination {
     margin-top: 0;
   }
-  body.home #content .twt {
+  body.home #content .content-secondary {
+    margin-bottom: 0;
+  }
+  body.home #content .content-secondary:after {
+    content: "";
+    height: 0;
+    display: block;
+    font-size: 0;
+    visibility: 0;
+    clear: both;
+  }
+  body.home #content .content-secondary .twt {
     float: left;
     margin-right: 320px;
     min-height: 600px;
+    margin-bottom: 0;
   }
   body.home #content .content-secondary .banner300x600 {
     float: left;
@@ -2354,7 +2369,6 @@ you can add resource intensive styles.
     float: left;
     width: 300px;
     margin-left: -310px;
-    margin-bottom: 20px;
   }
   .sidebar .posts-list {
     margin-right: 0;
