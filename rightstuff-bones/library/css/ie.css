@@ -535,13 +535,17 @@ html, body {
   height: 100%;
 }
 
+body {
+  margin-bottom: -1px;
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
 #container {
   padding-top: 60px;
-  margin-bottom: -1px;
-  height: 100%;
+  min-height: 100%;
+  margin-bottom: -160px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -565,13 +569,12 @@ LAYOUT & GRID STYLES
 #container .wrap.banner-wrap .banner .email-collection div {
   float: right;
 }
-#container #content {
-  min-height: 100%;
-  margin-bottom: -160px;
+#container .push {
+  height: 160px;
 }
 
 .wrap {
-  max-width: 1140px;
+  max-width: 1030px;
   width: 100%;
 }
 
@@ -985,11 +988,6 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 
 
 ******************************************************************/
-#container .wrap {
-  width: 1030px;
-  margin: 0 auto;
-  padding: 0;
-}
 #container .wrap.banner-wrap .banner .banner-inner {
   margin-bottom: 0;
 }
@@ -1010,6 +1008,11 @@ be seen on the Desktop.
 }
 #container .wrap.banner-wrap .banner .email-collection div {
   float: none;
+}
+
+.wrap {
+  margin: 0 auto;
+  padding: 0;
 }
 
 #main {

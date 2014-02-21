@@ -10,11 +10,6 @@ be seen on the Desktop.
 ******************************************************************/
 
 #container {
-	.wrap {
-		width:1030px;
-		margin:0 auto;
-		padding:0;
-	}
 	.wrap.banner-wrap {
 		.banner {
 			.banner-inner {
@@ -36,6 +31,10 @@ be seen on the Desktop.
 			}
 		}
 	}
+}
+.wrap {
+	margin:0 auto;
+	padding:0;
 }
 #main {
 	width:700px;

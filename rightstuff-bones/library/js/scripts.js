@@ -110,13 +110,21 @@ jQuery(document).ready(function($) {
 		$('.SEARCH_FORM').slideToggle()
 	})
 	// Hide wp admin bar
-	$('html').css('cssText','margin-top:0 !important;')
-	$('#wpadminbar').slideUp(2000, function() {
-		$(this).wrap('<div id="wpadminbar_wrap"></div>').after('<a class="show-wp-admin SHOW_WP_ADMIN">Show WP Admin Bar</a>')
-	})
-	$('body').on('click','#wpadminbar_wrap .SHOW_WP_ADMIN',function() {
-		$(this).parent('#wpadminbar_wrap').toggleClass('showing').find('#wpadminbar').slideToggle(250)
-	})
+	var adminBarMove = $('#wpadminbar').outerHeight()-1
+	$('#wpadminbar').animate({
+		'top':'-='+adminBarMove
+	}, 2000,function() {
+	}).hover(
+		function(){
+			$('#wpadminbar').stop().css('top','0').toggleClass('wpadminbar-shown');
+		},
+		function(){
+			$('#wpadminbar').animate({
+				'top':'-='+adminBarMove
+			}, 2000).toggleClass('wpadminbar-shown');
+		}
+	).append('<div class="wpadminbar-activator"></div>');
+	
 	RS.resizeVideo = function(vidRatio) {
 		jQuery('.VIDEO iframe').attr('height',jQuery('.VIDEO').width() * vidRatio)
 	}

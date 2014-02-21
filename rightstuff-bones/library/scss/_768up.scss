@@ -20,6 +20,9 @@ GENERAL STYLES
 html, body {
 	height:100%;
 }
+body {
+	margin-bottom:-1px;
+}
 
 
 /*********************
@@ -28,8 +31,8 @@ LAYOUT & GRID STYLES
 
 #container {
 	padding-top:60px;
-	margin-bottom:-1px;
-	height:100%;
+	min-height:100%;
+	margin-bottom:-160px;
 	@include box-sizing;
 	.wrap.banner-wrap {
 		margin:15px auto 30px;
@@ -50,13 +53,12 @@ LAYOUT & GRID STYLES
 			}
 		}
 	}
-	#content {
-		min-height:100%;
-		margin-bottom:-160px;
+	.push {
+		height:160px;
 	}
 }
 .wrap {
-	max-width: 1140px;
+	max-width: 1030px;
 	width:100%;
 }
 #main {
