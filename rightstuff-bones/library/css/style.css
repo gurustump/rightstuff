@@ -487,6 +487,20 @@ http://sachagreif.com/sass-color-variables/
 /*********************
 TYPOGRAPHY
 *********************/
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: 'OswaldLight';
+    src: url("../fonts/Oswald-Light-webfont.svg#OswaldLight") format("svg");
+  }
+  @font-face {
+    font-family: 'OswaldBook';
+    src: url("../fonts/Oswald-Regular-webfont.svg#OswaldBook") format("svg");
+  }
+  @font-face {
+    font-family: 'OswaldBold';
+    src: url("../fonts/Oswald-Bold-webfont.svg#OswaldBold") format("svg");
+  }
+}
 /* 	To embed your own fonts, use this syntax
 	and place your fonts inside the
 	library/fonts folder. For more information
@@ -671,7 +685,7 @@ BUTTONS
   border: 0;
   color: #fff;
   font-family: Oswald;
-  font-size: 14px;
+  font-size: 15px;
   padding: 0 20px;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
 }
@@ -732,7 +746,7 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
-html {
+html.rightstuff {
   margin-top: 0 !important;
 }
 
@@ -824,14 +838,20 @@ a:link, a:visited:link {
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: Oswald;
   text-rendering: optimizelegibility;
+  font-family: "Oswald",Helvetica,Arial,sans-serif;
   font-weight: normal;
   /*
   if you're going to use webfonts, be sure to check your weights
   http://css-tricks.com/watch-your-font-weight/
   */
   /* removing text decoration from all headline links */
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+    font-family: "OswaldBook",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+  }
 }
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
@@ -866,10 +886,16 @@ h5, .h5 {
 }
 
 strong.title {
-  font-weight: normal;
   font-size: 16px;
-  font-family: Oswald;
   color: #66a5a5;
+  font-family: "Oswald",Helvetica,Arial,sans-serif;
+  font-weight: normal;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  strong.title {
+    font-family: "OswaldBook",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+  }
 }
 
 /*********************
@@ -966,6 +992,7 @@ HEADER STYLES
 }
 .header .wrap .nav-wrap .search-form button {
   border: 0;
+  margin-bottom: -6px;
 }
 
 /*********************
@@ -999,7 +1026,14 @@ and more scalable.
   padding: 10px 5px;
   background-color: #111;
   border-bottom: 1px solid #222;
-  font-family: Oswald;
+  font-family: "Oswald",Helvetica,Arial,sans-serif;
+  font-weight: normal;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .nav > li > a {
+    font-family: "OswaldBook",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+  }
 }
 .nav > li ul.sub-menu li a,
 .nav > li ul.children li a {
@@ -1030,13 +1064,20 @@ body.home #content .featured-pagination .show-more {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: Oswald;
+  font-family: "Oswald",Helvetica,Arial,sans-serif;
+  font-weight: normal;
   font-size: 16px;
   height: 40px;
   line-height: 39px;
   width: 96px;
   padding-left: 30px;
   display: inline-block;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  body.home #content .featured-pagination .show-more {
+    font-family: "OswaldBook",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+  }
 }
 body.home #content .featured-pagination .show-more:hover {
   background-color: #000;
@@ -1120,11 +1161,18 @@ body.home #mainTouts > li > a .title-wrap, body.home .featured-posts > ul > li >
   padding: 15px;
 }
 body.home #mainTouts > li > a .title-wrap .title, body.home .featured-posts > ul > li > a .title-wrap .title, .posts-list > li > a .title-wrap .title {
-  font-family: Oswald;
+  font-family: "Oswald",Helvetica,Arial,sans-serif;
+  font-weight: normal;
   display: block;
   font-size: 22px;
   line-height: 24px;
   margin-bottom: 5px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  body.home #mainTouts > li > a .title-wrap .title, body.home .featured-posts > ul > li > a .title-wrap .title, .posts-list > li > a .title-wrap .title {
+    font-family: "OswaldBook",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+  }
 }
 body.home #mainTouts > li > a .title-wrap .excerpt, body.home .featured-posts > ul > li > a .title-wrap .excerpt, .posts-list > li > a .title-wrap .excerpt {
   display: block;
@@ -1150,9 +1198,16 @@ body.home .featured-posts {
   display: none;
   margin-bottom: -41px;
   font-size: 11px;
-  font-family: Oswald;
+  font-family: "Oswald",Helvetica,Arial,sans-serif;
+  font-weight: normal;
   color: #aaa;
   padding-left: 5px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  #main article .section-primary .post-meta {
+    font-family: "OswaldBook",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+  }
 }
 #main article .section-primary .addthis_toolbox {
   height: 32px;
@@ -1178,7 +1233,7 @@ body.home .featured-posts {
   display: block;
 }
 #main article .section-secondary {
-  margin: 10px 0 25px;
+  margin: 10px 0 15px;
 }
 #main article .section-secondary .addthis_toolbox {
   margin: 0;
@@ -1219,14 +1274,23 @@ body.home .featured-posts {
   clear: both;
 }
 #main article .section-secondary .post-secondary-wrap {
-  padding-top: 25px;
+  padding-top: 15px;
+}
+#main article .section-secondary .post-secondary-wrap a {
+  text-decoration: none;
 }
 #main article .tags a {
   color: #cc3366;
   text-decoration: none;
   font-size: 16px;
+  font-family: "Oswald",Helvetica,Arial,sans-serif;
   font-weight: 300;
-  font-family: Oswald;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  #main article .tags a {
+    font-family: "OswaldBook",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+  }
 }
 #main article .tags a:hover {
   text-decoration: underline;
@@ -1257,10 +1321,17 @@ body.home .featured-posts {
 }
 .twt .twt-posts > li > a .title {
   color: #6c0c16;
-  font-family: Oswald;
+  font-family: "Oswald",Helvetica,Arial,sans-serif;
+  font-weight: normal;
   display: block;
   font-size: 16px;
   margin-bottom: 5px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .twt .twt-posts > li > a .title {
+    font-family: "OswaldBook",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+  }
 }
 
 .banner300x600 {
@@ -1579,14 +1650,23 @@ EMAIL FORM STYLES
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-.email-collection h3, .email-collection p {
-  margin-bottom: 5px;
+.email-collection h3 {
+  margin-bottom: 10px;
 }
 .email-collection div {
   display: inline;
 }
 .email-collection .btn-container .btn {
-  margin-bottom: -6px;
+  float: left;
+  margin: -1px 0 -7px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .email-collection .btn-container .btn {
+    margin-bottom: -6px;
+  }
+}
+.email-collection input[type=email] {
+  width: 180px;
 }
 
 /*********************
@@ -1603,7 +1683,7 @@ SIDEBARS & ASIDES
 }
 .sidebar .banner {
   width: 300px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
 }
 
 .widget ul li {
@@ -1618,10 +1698,17 @@ FOOTER STYLES
   background: #555;
   border-bottom: 40px solid #111;
   color: #555;
-  font-family: Oswald;
+  font-family: "Oswald",Helvetica,Arial,sans-serif;
+  font-weight: normal;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: -1px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .footer {
+    font-family: "OswaldBook",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+  }
 }
 .footer a, .footer a:hover {
   color: #fff;
@@ -2015,21 +2102,22 @@ you can add resource intensive styles.
     box-sizing: border-box;
   }
   #container .wrap.banner-wrap {
-    margin: 15px auto 30px;
+    margin: 15px auto 0;
+    padding-bottom: 30px;
   }
   #container .wrap.banner-wrap .banner {
     width: 728px;
     margin: 0 auto;
   }
-  #container .wrap.banner-wrap .banner .email-collection p {
-    display: inline;
-    margin-right: 5px;
-  }
   #container .wrap.banner-wrap .banner .email-collection h3 {
     float: left;
+    margin-bottom: 0;
   }
   #container .wrap.banner-wrap .banner .email-collection div {
     float: right;
+  }
+  #container .wrap.banner-wrap .banner .email-collection input[type=email] {
+    width: 350px;
   }
   #container .push {
     height: 160px;
@@ -2056,6 +2144,14 @@ you can add resource intensive styles.
   .header #inner-header {
     position: relative;
   }
+  .header .wrap {
+    padding-right: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+  }
   .header .wrap #logo {
     float: left;
     width: 275px;
@@ -2079,7 +2175,8 @@ you can add resource intensive styles.
     font-size: 24px;
     text-transform: uppercase;
     color: #aaa;
-    font-family: Oswald;
+    font-family: "Oswald",Helvetica,Arial,sans-serif;
+    font-weight: normal;
     border-left: 1px solid #333;
     padding: 0 10px;
   }
@@ -2454,6 +2551,12 @@ you can add resource intensive styles.
     margin-left: 10px;
   }
 }
+@media only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 0) {
+  .header .wrap .nav-wrap nav .nav > li > a {
+    font-family: "OswaldBook",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+  }
+}
 /*
 SMALLER LAPTOPS
 */
@@ -2483,6 +2586,9 @@ you can add resource intensive styles.
   be seen on the Desktop. 
   
   ******************************************************************/
+  #container {
+    padding-top: 70px;
+  }
   #container .wrap.banner-wrap .banner .banner-inner {
     margin-bottom: 0;
   }
@@ -2494,17 +2600,17 @@ you can add resource intensive styles.
     box-sizing: border-box;
     height: 90px;
   }
-  #container .wrap.banner-wrap .banner .email-collection h3, #container .wrap.banner-wrap .banner .email-collection p {
-    display: block;
-    margin-right: 0;
-  }
   #container .wrap.banner-wrap .banner .email-collection h3 {
+    display: block;
+    margin: 7px 0 10px;
     float: none;
   }
   #container .wrap.banner-wrap .banner .email-collection div {
     float: none;
   }
-
+  #container .wrap.banner-wrap .banner .email-collection .btn-container .btn {
+    margin-bottom: -7px;
+  }
   .wrap {
     margin: 0 auto;
     padding: 0;
@@ -2618,7 +2724,8 @@ you can add resource intensive styles.
   }
 
   body.home #container .wrap.banner-wrap {
-    margin-top: 5px;
+    margin-top: 0;
+    padding-top: 5px;
   }
   body.home #container .wrap.banner-wrap .banner {
     width: 100%;
@@ -2633,8 +2740,11 @@ you can add resource intensive styles.
   body.home #container .wrap.banner-wrap .banner .email-collection {
     width: 282px;
   }
-  body.home #container .wrap.banner-wrap .banner .email-collection h3, body.home #container .wrap.banner-wrap .banner .email-collection p {
+  body.home #container .wrap.banner-wrap .banner .email-collection h3 {
     display: block;
+  }
+  body.home #container .wrap.banner-wrap .banner .email-collection input[type=email] {
+    width: 164px;
   }
   body.home #container .wrap.banner-wrap:after {
     content: "";
@@ -2803,6 +2913,9 @@ you can add resource intensive styles.
   .email-collection div {
     float: right;
   }
+  .email-collection .btn-container .btn {
+    margin-bottom: -6px;
+  }
 
   /*********************
   FOOTER STYLES
@@ -2820,6 +2933,12 @@ you can add resource intensive styles.
     margin-left: 0;
   }
 }
+@media only screen and (min-width: 1030px) and (-webkit-min-device-pixel-ratio: 0) {
+  #container .wrap.banner-wrap .banner .email-collection .btn-container .btn {
+    margin-bottom: -6px;
+  }
+}
+
 /*
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.

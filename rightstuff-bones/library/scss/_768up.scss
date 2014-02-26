@@ -35,20 +35,21 @@ LAYOUT & GRID STYLES
 	margin-bottom:-160px;
 	@include box-sizing;
 	.wrap.banner-wrap {
-		margin:15px auto 30px;
+		margin:15px auto 0;
+		padding-bottom:30px;
 		.banner {
 			width:728px;
 			margin:0 auto;
 			.email-collection {
-				p {
-					display:inline;
-					margin-right:5px;
-				}
 				h3 {
 					float:left;
+					margin-bottom:0;
 				}
 				div {
 					float:right;
+				}
+				input[type=email] {
+					width:350px;
 				}
 			}
 		}
@@ -79,6 +80,8 @@ HEADER STYLES
 		position:relative;
 	}
 	.wrap {
+		padding-right:5px;
+		@include box-sizing;
 		#logo {
 			float:left;
 			width:275px;
@@ -102,7 +105,7 @@ HEADER STYLES
 							font-size:24px;
 							text-transform:uppercase;
 							color:#aaa;
-							font-family:Oswald;
+							@include Oswald(normal);
 							border-left:1px solid #333;
 							padding:0 10px;
 							&:before {

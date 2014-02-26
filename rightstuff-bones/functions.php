@@ -177,7 +177,7 @@ function bones_comments( $comment, $args, $depth ) {
 function bones_wpsearch($form) {
 	$form = '<form role="search" method="get" class="search-form SEARCH_FORM" action="' . home_url( '/' ) . '" >
 	<input type="search" value="' . get_search_query() . '" name="s" placeholder="' . esc_attr__( 'Search...', 'bonestheme' ) . '" />
-	<button class="btn" type="submit">Search</button>
+	<span class="btn-container"><button class="btn" type="submit">Search</button></span>
 	</form>';
 	return $form;
 } // don't remove this bracket!

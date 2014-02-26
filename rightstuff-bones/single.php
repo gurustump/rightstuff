@@ -43,11 +43,11 @@
 											echo $secondaryContent;
 											?>
 										</div>
+										<?php the_tags( '<div class="tags"><strong class="title">' . __( 'Tags:', 'bonestheme' ) . '</strong> ', ', ', '</div>' ); ?>
 									</div>
 								</section>
 
 								<footer class="article-footer">
-									<?php the_tags( '<div class="tags"><strong class="title">' . __( 'Tags:', 'bonestheme' ) . '</strong> ', ', ', '</div>' ); ?>
 									<?php include 'includes/email-collection.php'; ?>
 								</footer>
 								

@@ -86,6 +86,36 @@ $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+		font-family: 'OswaldLight';
+		src: url('../fonts/Oswald-Light-webfont.svg#OswaldLight') format('svg');
+	}
+	@font-face {
+		font-family: 'OswaldBook';
+		src: url('../fonts/Oswald-Regular-webfont.svg#OswaldBook') format('svg');
+	}
+	@font-face {
+		font-family: 'OswaldBold';
+		src: url('../fonts/Oswald-Bold-webfont.svg#OswaldBold') format('svg');
+	}
+}
+
+@mixin Oswald($weight) {
+	font-family:"Oswald",Helvetica,Arial,sans-serif;
+	font-weight:$weight;
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		@if ($weight == '300' or $weight == 'light') {
+			font-family:"OswaldLight",Helvetica,Arial,sans-serif;
+		} @else if ($weight == '700' or $weight == 'bold') {
+			font-family:"OswaldBold",Helvetica,Arial,sans-serif;
+		} @else {
+			font-family:"OswaldBook",Helvetica,Arial,sans-serif;
+		}
+		font-weight:normal;
+	}
+}
+
 /* 	To embed your own fonts, use this syntax
 	and place your fonts inside the
 	library/fonts folder. For more information
@@ -111,8 +141,8 @@ use the best ampersand
 http://simplebits.com/notebook/2008/08/14/ampersands-2/
 */
 span.amp {
-  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
-  font-style: italic;
+	font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+	font-style: italic;
 }
 
 // text alignment
@@ -274,7 +304,7 @@ BUTTONS
 	border:0;
 	color:#fff;
 	font-family:Oswald;
-	font-size:14px;
+	font-size:15px;
 	padding:0 20px;
 	text-shadow:0 0 2px rgba(0,0,0,.35);
 	&:hover {

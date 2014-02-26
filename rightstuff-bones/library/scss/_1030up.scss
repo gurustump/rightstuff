@@ -10,6 +10,7 @@ be seen on the Desktop.
 ******************************************************************/
 
 #container {
+	padding-top:70px;
 	.wrap.banner-wrap {
 		.banner {
 			.banner-inner {
@@ -18,15 +19,21 @@ be seen on the Desktop.
 			.email-collection {
 				@include box-sizing;
 				height:90px;
-				h3, p {
-					display:block;
-					margin-right:0;
-				}
 				h3 {
+					display:block;
+					margin:7px 0 10px;
 					float:none;
 				}
 				div {
 					float:none;
+				}
+				.btn-container {
+					.btn {
+						margin-bottom:-7px;
+						@media screen and (-webkit-min-device-pixel-ratio:0) {
+							margin-bottom:-6px;
+						}
+					}
 				}
 			}
 		}
@@ -113,7 +120,8 @@ body.archive {
 body.home {
 	#container {
 		.wrap.banner-wrap {
-			margin-top:5px;
+			margin-top:0;
+			padding-top:5px;
 			.banner {
 				width:100%;
 				& > *:first-child {
@@ -125,9 +133,11 @@ body.home {
 				}
 				.email-collection {
 					width:282px;
-					h3, p {
+					h3 {
 						display:block;
-						
+					}
+					input[type=email] {
+						width:164px;
 					}
 				}
 			}
@@ -276,6 +286,11 @@ body.home {
 	}
 	div {
 		float:right;
+	}
+	.btn-container {
+		.btn {
+			margin-bottom:-6px;
+		}
 	}
 }
 

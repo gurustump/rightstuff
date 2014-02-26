@@ -2,6 +2,9 @@
 					<?php if (is_category('news')) { 
 						include 'includes/twt-articles.php'; 
 					} ?>
+					<div class="banner">
+						<?php ad_placement('ad_300x250'); ?>
+					</div>
 					<ul class="posts-list">
 					<?php 
 					$featured_args = array(
@@ -37,7 +40,4 @@
 						}
 					} ?>
 					</ul>
-					<div class="banner">
-						<?php ad_placement('ad_300x250'); ?>
-					</div>
 				</div>

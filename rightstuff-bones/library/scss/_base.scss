@@ -14,7 +14,7 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
-html {
+html.rightstuff {
 	margin-top:0 !important;
 }
 body {
@@ -120,9 +120,8 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-	font-family:Oswald;
 	text-rendering:optimizelegibility;
-	font-weight:normal;
+	@include Oswald(normal);
 	
 	/*
 	if you're going to use webfonts, be sure to check your weights
@@ -164,10 +163,9 @@ h5, .h5 {
 }
 strong {
 	&.title {
-		font-weight:normal;
 		font-size:16px;
-		font-family:Oswald;
 		color:$rs-blue;
+		@include Oswald(normal);
 	}
 }
 
@@ -256,6 +254,7 @@ HEADER STYLES
 				text-align:right;
 				button {
 					border:0;
+					margin-bottom:-6px;
 				}
 			}
 		}
@@ -283,7 +282,7 @@ and more scalable.
 			padding:10px 5px;
 			background-color:#111;
 			border-bottom:1px solid #222;
-			font-family:Oswald;
+			@include Oswald(normal);
 		}
 
 		&:first-child {}
@@ -352,7 +351,7 @@ body.home {
 				color:#fff;
 				text-decoration:none;
 				text-transform:uppercase;
-				font-family:Oswald;
+				@include Oswald(normal);
 				font-size:16px;
 				height:40px;
 				line-height:39px;
@@ -424,7 +423,7 @@ body.home #mainTouts, body.home .featured-posts > ul, .posts-list {
 				padding:15px;
 				//@include css-gradient($from:#111,$to:#222,$vstart:top,$vend:bottom);
 				.title {
-					font-family:Oswald;
+					@include Oswald(normal);
 					display:block;
 					font-size:22px;
 					line-height:24px;
@@ -459,7 +458,7 @@ body.home .featured-posts {
 				display:none;
 				margin-bottom:-41px;
 				font-size:11px;
-				font-family:Oswald;
+				@include Oswald(normal);
 				color:#aaa;
 				padding-left:5px;
 			}
@@ -490,7 +489,7 @@ body.home .featured-posts {
 			}
 		}
 		.section-secondary {
-			margin:10px 0 25px;
+			margin:10px 0 15px;
 			.addthis_toolbox {
 				margin:0;
 				.btn-fb, .btn-twit {
@@ -521,7 +520,10 @@ body.home .featured-posts {
 				}
 			}
 			.post-secondary-wrap {
-				padding-top:25px;
+				padding-top:15px;
+				a {
+					text-decoration:none;
+				}
 			}
 		}
 		.tags {
@@ -529,8 +531,7 @@ body.home .featured-posts {
 				color:$rs-pink;
 				text-decoration:none;
 				font-size:16px;
-				font-weight:300;
-				font-family:Oswald;
+				@include Oswald(300);
 				&:hover {
 					text-decoration:underline;
 				}
@@ -562,7 +563,7 @@ body.home .featured-posts {
 				}
 				.title {
 					color:$twt-color;
-					font-family:Oswald;
+					@include Oswald(normal);
 					display:block;
 					font-size:16px;
 					margin-bottom:5px;
@@ -1064,16 +1065,23 @@ EMAIL FORM STYLES
 	text-align:center;
 	padding:10px;
 	@include box-sizing;
-	h3, p {
-		margin-bottom:5px;
+	h3 {
+		margin-bottom:10px;
 	}
 	div {
 		display:inline;
 	}
 	.btn-container {
 		.btn {
-			margin-bottom:-6px;
+			float:left;
+			margin:-1px 0 -7px;
+			@media screen and (-webkit-min-device-pixel-ratio:0) {
+				margin-bottom:-6px;
+			}
 		}
+	}
+	input[type=email] {
+		width:180px;
 	}
 }
 
@@ -1097,7 +1105,7 @@ SIDEBARS & ASIDES
 	}
 	.banner {
 		width:300px;
-		margin:0 auto;
+		margin:0 auto 20px;
 	}
 }
 
@@ -1133,7 +1141,7 @@ FOOTER STYLES
 	background:#555;
 	border-bottom:40px solid #111;
 	color:#555;
-	font-family:Oswald;
+	@include Oswald(normal);
 	text-transform:uppercase;
 	text-align:center;
 	margin-bottom:-1px;
