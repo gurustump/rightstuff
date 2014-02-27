@@ -65,6 +65,16 @@ jQuery(document).ready(function($) {
 	
 	}
 	
+	RS.getScrollbarWidth = function() {
+		var div = $('<div style="width:50px;height:50px;overflow:hidden;position:absolute;top:-200px;left:-200px;"><div style="height:100px;"></div></div>'); 
+		$('body').append(div); 
+		var w1 = $('div', div).innerWidth(); 
+		div.css('overflow-y', 'auto'); 
+		var w2 = $('div', div).innerWidth(); 
+		$(div).remove();
+		return (w1 - w2);
+	}
+	
 	$('.SHOW_MORE').click(function(e) {
 		e.preventDefault()
 		var activator = $(this)
@@ -130,18 +140,18 @@ jQuery(document).ready(function($) {
 		var imgSrc = $(this).find('img').attr('src')
 		var imgTitle = $(this).find('img').attr('title')
 		var overlay = $('<div class="overlay OVERLAY">'+
-			'<div class="title-bar">'+
+			'<div class="title-bar TITLE_BAR">'+
 				'<a class="close CLOSE">Close</a>'+
 				'<h2>'+imgTitle+'</h2>'+
 			'</div>'+
-			'<div class="overlay-inner OVERLAY_INNER">'+
+			'<div class="overlay-inner">'+
 				'<img src="'+imgSrc+'" alt="" />'+
 			'</div>'+
 		'</div>').appendTo('body')
 		$('body').addClass('no-scroll')
-		overlay.find('.OVERLAY_INNER').height(overlay.height()-50)
+		overlay.find('.TITLE_BAR').width(overlay.width()-RS.getScrollbarWidth())
 		$(window).resize(function() {
-			overlay.find('.OVERLAY_INNER').height(overlay.height()-50)
+			overlay.find('.TITLE_BAR').width(overlay.width()-RS.getScrollbarWidth())
 		})
 		overlay.fadeIn()
 	})

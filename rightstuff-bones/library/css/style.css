@@ -1730,10 +1730,13 @@ OVERLAY STYLES
   top: 0;
   left: 0;
   display: none;
-  padding-top: 50px;
-}
-.overlay .overlay-inner {
   overflow: auto;
+  padding-top: 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .overlay img {
   max-width: 100%;

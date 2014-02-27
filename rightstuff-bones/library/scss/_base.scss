@@ -1134,10 +1134,9 @@ OVERLAY STYLES
 	top:0;
 	left:0;
 	display:none;
+	overflow:auto;
 	padding-top:50px;
-	.overlay-inner {
-		overflow:auto;
-	}
+	@include box-sizing;
 	img {
 		max-width:100%;
 	}
