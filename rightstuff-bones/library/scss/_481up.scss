@@ -131,6 +131,21 @@ body.home, body.archive {
 } /* end .entry-content */
 
 /*********************
+OVERLAY STYLES
+*********************/
+
+.overlay-activator { 
+	&.align-left {
+		float:left;
+		margin-right:10px;
+	}
+	&.align-right {
+		float:right;
+		margin-left:10px;
+	}
+}
+
+/*********************
 SIDEBARS & ASIDES
 *********************/
 

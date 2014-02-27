@@ -494,6 +494,18 @@ body.home #content #main, body.archive #content #main {
 
 /* end .entry-content */
 /*********************
+OVERLAY STYLES
+*********************/
+.overlay-activator.align-left {
+  float: left;
+  margin-right: 10px;
+}
+.overlay-activator.align-right {
+  float: right;
+  margin-left: 10px;
+}
+
+/*********************
 SIDEBARS & ASIDES
 *********************/
 .sidebar .posts-list {
@@ -889,7 +901,7 @@ body.home #mainTouts > li:first-child > a > .img-wrap:after {
 
 .posts-list > li > a > .img-wrap {
   width: auto;
-  height: 200px;
+  height: 170px;
 }
 .posts-list > li > a > .img-wrap img {
   -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
@@ -1361,6 +1373,7 @@ body.home .featured-posts > ul > li > a .title-wrap {
 }
 .email-collection h3 {
   float: left;
+  margin-bottom: 0;
 }
 .email-collection div {
   float: right;

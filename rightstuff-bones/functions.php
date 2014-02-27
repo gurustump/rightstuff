@@ -219,7 +219,32 @@ function ad_placement($slug) {
 			echo $ad->post_content;
 		}
 	}
+}
 
+// shortcodes
+function img_overlay_shortcode($atts) {
+	extract( shortcode_atts( array(
+		'src' => '',
+		'align' => 'none',
+		'width' => '200',
+		'height' => '300',
+		'title' => ''
+	), $atts ) );
+	
+	$overlayActivator = '';
+	$overlayActivator .= '<div class="overlay-activator align-'.$align.' OVERLAY_ACTIVATOR" style="width:'.$width.'px;height:'.$height.'px;">';
+	$overlayActivator .= '<img src="'.$src.'" title="'.$title.'" />';
+	$overlayActivator .= '<span>View full size</span><div class="fade"></div></div>';
+	return $overlayActivator;
+}
+add_shortcode('img_overlay','img_overlay_shortcode');
+
+// admin css
+add_action('admin_head', 'custom_admin_css');
+function custom_admin_css() {
+	echo '<link rel="stylesheet" href="';
+	echo get_stylesheet_directory_uri();
+	echo'/library/css/admin.css" type="text/css" media="all" />';
 }
 /*
 add_filter('language_attributes', 'add_og_xml_ns');

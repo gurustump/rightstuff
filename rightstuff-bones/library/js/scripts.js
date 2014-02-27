@@ -125,6 +125,33 @@ jQuery(document).ready(function($) {
 		}
 	).append('<div class="wpadminbar-activator"></div>');
 	
+	$('.OVERLAY_ACTIVATOR').click(function(e) {
+		e.preventDefault()
+		var imgSrc = $(this).find('img').attr('src')
+		var imgTitle = $(this).find('img').attr('title')
+		var overlay = $('<div class="overlay OVERLAY">'+
+			'<div class="title-bar">'+
+				'<a class="close CLOSE">Close</a>'+
+				'<h2>'+imgTitle+'</h2>'+
+			'</div>'+
+			'<div class="overlay-inner OVERLAY_INNER">'+
+				'<img src="'+imgSrc+'" alt="" />'+
+			'</div>'+
+		'</div>').appendTo('body')
+		$('body').addClass('no-scroll')
+		overlay.find('.OVERLAY_INNER').height(overlay.height()-50)
+		$(window).resize(function() {
+			overlay.find('.OVERLAY_INNER').height(overlay.height()-50)
+		})
+		overlay.fadeIn()
+	})
+	$('body').on('click','.OVERLAY .CLOSE',function(e) {
+		e.preventDefault()
+		$('body').removeClass('no-scroll')
+		$(this).parents('.OVERLAY').fadeOut('400',function() {
+			$(this).remove()
+		})
+	})
 	RS.resizeVideo = function(vidRatio) {
 		jQuery('.VIDEO iframe').attr('height',jQuery('.VIDEO').width() * vidRatio)
 	}

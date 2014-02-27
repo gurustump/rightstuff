@@ -806,6 +806,8 @@ LAYOUT & GRID STYLES
   margin-bottom: 25px;
 }
 #container .banner-wrap .banner .banner-inner {
+  background: #eee;
+  width: 100%;
   margin-bottom: 15px;
 }
 #container .banner-wrap .banner .banner-inner * {
@@ -1227,6 +1229,14 @@ body.home .featured-posts {
 #main article .section-primary .post-content-wrap {
   clear: both;
   margin: 25px 0;
+}
+#main article .section-primary .post-content-wrap:after {
+  content: "";
+  height: 0;
+  display: block;
+  font-size: 0;
+  visibility: 0;
+  clear: both;
 }
 #main article .video-wrap iframe {
   width: 100%;
@@ -1670,6 +1680,98 @@ EMAIL FORM STYLES
 }
 
 /*********************
+OVERLAY STYLES
+*********************/
+.overlay-activator {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin: 0 auto 10px;
+}
+.overlay-activator .fade {
+  background: url(../images/bg-white-fade-100h.png) repeat-x 0 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.overlay-activator span {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 15%;
+  text-align: center;
+  z-index: 2;
+  font-size: 16px;
+  font-family: "Oswald",Helvetica,Arial,sans-serif;
+  font-weight: normal;
+  background: rgba(0, 0, 0, 0.3);
+  line-height: 26px;
+  color: #fff;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .overlay-activator span {
+    font-family: "OswaldBook",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+  }
+}
+
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  display: none;
+  padding-top: 50px;
+}
+.overlay .overlay-inner {
+  overflow: auto;
+}
+.overlay img {
+  max-width: 100%;
+}
+.overlay .title-bar {
+  background: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  height: 50px;
+  left: 0;
+  line-height: 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.overlay .title-bar h2 {
+  height: 50px;
+  line-height: 50px;
+}
+.overlay .title-bar .close {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.9) url(../images/ic-sprite.png) no-repeat 9px -734px;
+  text-indent: -9999px;
+}
+.overlay .title-bar .close:hover {
+  background-color: rgba(40, 40, 40, 0.9);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/*********************
 SIDEBARS & ASIDES
 *********************/
 .sidebar .twt {
@@ -1684,6 +1786,7 @@ SIDEBARS & ASIDES
 .sidebar .banner {
   width: 300px;
   margin: 0 auto 20px;
+  background: #eee;
 }
 
 .widget ul li {
@@ -1925,6 +2028,18 @@ tweeners.
   }
 
   /* end .entry-content */
+  /*********************
+  OVERLAY STYLES
+  *********************/
+  .overlay-activator.align-left {
+    float: left;
+    margin-right: 10px;
+  }
+  .overlay-activator.align-right {
+    float: right;
+    margin-left: 10px;
+  }
+
   /*********************
   SIDEBARS & ASIDES
   *********************/
@@ -2418,7 +2533,7 @@ you can add resource intensive styles.
 
   .posts-list > li > a > .img-wrap {
     width: auto;
-    height: 200px;
+    height: 170px;
   }
   .posts-list > li > a > .img-wrap img {
     -webkit-transition: opacity 1s, height 1.5s, width 1.5s, margin-left 1.5s, margin-top 1.5s, -webkit-transform 2s;
@@ -2909,6 +3024,7 @@ you can add resource intensive styles.
   }
   .email-collection h3 {
     float: left;
+    margin-bottom: 0;
   }
   .email-collection div {
     float: right;
