@@ -47,38 +47,64 @@
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
 
-		<?php // drop Google Analytics Here ?>
+		<?php // Google Analytics ?>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-6626350-6', 'rightstuffdaily.com');
+			ga('send', 'pageview');
+
+		</script>
 		<?php // end analytics ?>
 
 		<script type='text/javascript'>
-		var googletag = googletag || {};
-		googletag.cmd = googletag.cmd || [];
-		(function() {
-		var gads = document.createElement('script');
-		gads.async = true;
-		gads.type = 'text/javascript';
-		var useSSL = 'https:' == document.location.protocol;
-		gads.src = (useSSL ? 'https:' : 'http:') + 
-		'//www.googletagservices.com/tag/js/gpt.js';
-		var node = document.getElementsByTagName('script')[0];
-		node.parentNode.insertBefore(gads, node);
-		})();
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			(function() {
+			var gads = document.createElement('script');
+			gads.async = true;
+			gads.type = 'text/javascript';
+			var useSSL = 'https:' == document.location.protocol;
+			gads.src = (useSSL ? 'https:' : 'http:') + 
+			'//www.googletagservices.com/tag/js/gpt.js';
+			var node = document.getElementsByTagName('script')[0];
+			node.parentNode.insertBefore(gads, node);
+			})();
+		</script>
+		
+		 <script type='text/javascript'>
+			googletag.cmd.push(function() {
+				var gtpHomeMapping = googletag.sizeMapping().
+				addSize([768,576], [728,90]).
+				addSize([480,320], [468,60]).
+				addSize([240,180], [234,60]).
+				addSize([0,0], [88,31]).
+				build();
+				
+				googletag.defineSlot('/5856/Network/Rightstuff_Home', [728, 90], 'div-gpt-ad-1393442769970-0').
+				defineSizeMapping(gtpHomeMapping).
+				addService(googletag.pubads());
+				googletag.enableServices();
+			});
 		</script>
 
-		<script type='text/javascript'>
-		googletag.cmd.push(function() {
-		googletag.defineSlot('/5856/Network/Rightstuff_Home', [728, 90], 'div-gpt-ad-1393442769970-0').addService(googletag.pubads());
-		googletag.pubads().enableSingleRequest();
-		googletag.enableServices();
-		});
-		</script>
+		<?php /* <script type='text/javascript'>
+			googletag.cmd.push(function() {
+			googletag.defineSlot('/5856/Network/Rightstuff_Home', [728, 90], 'div-gpt-ad-1393442769970-0').addService(googletag.pubads());
+			googletag.pubads().enableSingleRequest();
+			googletag.enableServices();
+			});
+		</script> */ ?>
 
 		<script type='text/javascript'>
-		googletag.cmd.push(function() {
-		googletag.defineSlot('/5856/Network/Rightstuff_Article', [300, 250], 'div-gpt-ad-1393442636050-0').addService(googletag.pubads());
-		googletag.pubads().enableSingleRequest();
-		googletag.enableServices();
-		});
+			googletag.cmd.push(function() {
+			googletag.defineSlot('/5856/Network/Rightstuff_Article', [300, 250], 'div-gpt-ad-1393442636050-0').addService(googletag.pubads());
+			googletag.pubads().enableSingleRequest();
+			googletag.enableServices();
+			});
 		</script>
 
 	</head>

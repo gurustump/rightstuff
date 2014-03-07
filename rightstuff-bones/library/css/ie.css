@@ -586,6 +586,10 @@ LAYOUT & GRID STYLES
   width: 728px;
   margin: 0 auto;
 }
+#container .wrap.banner-wrap .banner .banner-inner {
+  width: 720px;
+  height: 90px;
+}
 #container .wrap.banner-wrap .banner .email-collection h3 {
   float: left;
   margin-bottom: 0;
@@ -1195,7 +1199,6 @@ body.home #container .wrap.banner-wrap .banner {
   width: 100%;
 }
 body.home #container .wrap.banner-wrap .banner > *:first-child {
-  width: auto;
   margin-right: 20px;
 }
 body.home #container .wrap.banner-wrap .banner > * {

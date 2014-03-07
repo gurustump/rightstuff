@@ -40,6 +40,10 @@ LAYOUT & GRID STYLES
 		.banner {
 			width:728px;
 			margin:0 auto;
+			.banner-inner {
+				width:720px;
+				height:90px;
+			}
 			.email-collection {
 				h3 {
 					float:left;
